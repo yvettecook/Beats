@@ -17,6 +17,7 @@ class HeartRateKitTests: XCTestCase {
     override func setUp() {
         heartRateKit = HeartRateKit()
         heartRateKit.bluetoothController = MockBluetoothController()
+        heartRateKit.bluetoothController!.delegate = heartRateKit
         super.setUp()
     }
     
@@ -31,7 +32,7 @@ class HeartRateKitTests: XCTestCase {
     func testCanTryConnectToHeartRateMonitor() {
         heartRateKit.connectToMonitor()
         let state = heartRateKit.state
-        XCTAssertEqual(state, HeartRateKitState.Searching)
+        XCTAssertEqual(state, HeartRateKitState.Scanning)
     }
 
 }
