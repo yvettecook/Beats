@@ -11,17 +11,20 @@ import Foundation
 class HeartRateKit : NSObject, BluetoothControllerDelegate {
     
     var state: HeartRateKitState
-    
     var bluetoothController: BluetoothControllerProtocol?
+    
+    var availableDeviceNames = [String]()
     
     override init() {
         state = .Inactive
         super.init()
     }
     
-    func connectToMonitor() {
+    func scanForMonitors() {
         bluetoothController!.scanForAvailableMonitors()
     }
+    
+    // Handler
     
     // MARK: BluetoothControllerDelegate
     
@@ -39,4 +42,5 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
 enum HeartRateKitState {
     case Inactive
     case Scanning
+    case FoundMonitor
 }

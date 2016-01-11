@@ -12,4 +12,4 @@ protocol BluetoothControllerProtocol {
     
     func scanForAvailableMonitors()
     
-}
+} 

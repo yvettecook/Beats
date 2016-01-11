@@ -29,16 +29,28 @@ class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentra
         guard let centralManager = centralManager else { return }
         centralManager.scanForPeripheralsWithServices(nil, options: nil)
         state = .Scanning
+        
+//        guard let onFound = onFound else { return }
+//        onFound("Yo")
     }
+    
     
     // MARK: MockCBCentralMethods
     
+    func centralManager(central: MockCentralManager, didDiscoverPeripheral peripheral: MockPeripheral,
+        advertisementData: [String : AnyObject], RSSI: NSNumber) {
+        didDiscoverPeripheralCalled = true
+    }
     
     
-    // MARK: Method Flags
     
-    var scanForPeripheralsWithServicesCalled = false
+    // MARK: Method called Flags
+    
+    var didDiscoverPeripheralCalled = false
+    
 }
+
+
 
 
 enum BluetoothControllerState {

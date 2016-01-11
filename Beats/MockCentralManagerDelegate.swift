@@ -10,6 +10,7 @@ import Foundation
 
 protocol MockCentralManagerDelegate {
     
-    
+    func centralManager(central: MockCentralManager, didDiscoverPeripheral peripheral: MockPeripheral,
+        advertisementData: [String : AnyObject], RSSI: NSNumber)
     
 }

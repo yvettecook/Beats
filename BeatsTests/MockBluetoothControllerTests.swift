@@ -31,11 +31,24 @@ class MockBluetoothControllerTests: XCTestCase {
         XCTAssertEqual(mockBluetoothController.state, BluetoothControllerState.StartedUp)
     }
     
-    func testScanForAvailableDevicesChangesState() {
+    func testScanForAvailableMonitorsChangesState() {
         mockBluetoothController.scanForAvailableMonitors()
         let state = mockBluetoothController.state
         
-        XCTAssertEqual(state, BluetoothControllerState.Scanning)
+        XCTAssertEqual(state, BluetoothControllerState.Scanning) 
     }
     
+    func testOnScanForAvailableMonitorsCentralManagerScanMethodCalled() {
+        mockBluetoothController.scanForAvailableMonitors()
+        XCTAssertTrue(mockBluetoothController!.centralManager!.scanForPeripheralsWithServicesCalled)
+    }
+    
+    func testOnScanForAvailableMonitorsPeripheralIsFound() {
+        mockBluetoothController.scanForAvailableMonitors()
+        
+        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 4 * Int64(NSEC_PER_SEC))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            XCTAssertTrue(self.mockBluetoothController.didDiscoverPeripheralCalled)
+        }
+    }
 }

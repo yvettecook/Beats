@@ -21,6 +21,7 @@
 		1AA2559E1C42E6E600A7DAE5 /* MockCentralManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA2559D1C42E6E600A7DAE5 /* MockCentralManagerTests.swift */; };
 		1AA255A41C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255A31C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift */; };
 		1AA255A61C42F19700A7DAE5 /* MockCentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255A51C42F19700A7DAE5 /* MockCentralManagerDelegate.swift */; };
+		1AB1B5DA1C43CD3100AF8A6D /* MockPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		1AA2559D1C42E6E600A7DAE5 /* MockCentralManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCentralManagerTests.swift; sourceTree = "<group>"; };
 		1AA255A31C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothControllerDelegateProtocol.swift; sourceTree = "<group>"; };
 		1AA255A51C42F19700A7DAE5 /* MockCentralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCentralManagerDelegate.swift; sourceTree = "<group>"; };
+		1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheral.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				1AA255A31C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift */,
 				1AA2559B1C4029CC00A7DAE5 /* MockCentralManager.swift */,
 				1AA255A51C42F19700A7DAE5 /* MockCentralManagerDelegate.swift */,
+				1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */,
 				1AA2556A1C40246300A7DAE5 /* Assets.xcassets */,
 				1AA2556C1C40246300A7DAE5 /* LaunchScreen.storyboard */,
 				1AA2556F1C40246300A7DAE5 /* Info.plist */,
@@ -282,6 +285,7 @@
 				1AA255941C4024F900A7DAE5 /* HeartRateKit.swift in Sources */,
 				1AA255661C40246300A7DAE5 /* ViewController.swift in Sources */,
 				1AA255A41C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift in Sources */,
+				1AB1B5DA1C43CD3100AF8A6D /* MockPeripheral.swift in Sources */,
 				1AA255981C40270B00A7DAE5 /* MockBluetoothController.swift in Sources */,
 				1AA255641C40246300A7DAE5 /* AppDelegate.swift in Sources */,
 				1AA2559C1C4029CC00A7DAE5 /* MockCentralManager.swift in Sources */,
@@ -515,6 +519,7 @@
 				1AA2558A1C40246300A7DAE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1AA2558B1C40246300A7DAE5 /* Build configuration list for PBXNativeTarget "BeatsTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +528,7 @@
 				1AA2558D1C40246300A7DAE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1AA2558E1C40246300A7DAE5 /* Build configuration list for PBXNativeTarget "BeatsUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +537,7 @@
 				1AA255901C40246300A7DAE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

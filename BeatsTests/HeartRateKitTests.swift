@@ -30,9 +30,20 @@ class HeartRateKitTests: XCTestCase {
     }
     
     func testCanTryConnectToHeartRateMonitor() {
-        heartRateKit.connectToMonitor()
+        heartRateKit.scanForMonitors()
         let state = heartRateKit.state
         XCTAssertEqual(state, HeartRateKitState.Scanning)
+    }
+    
+    func testStateChangeWhenDeviceFound() {
+        heartRateKit.scanForMonitors()
+        
+        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 4 * Int64(NSEC_PER_SEC))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            let state = self.heartRateKit.state
+            XCTAssertEqual(state, HeartRateKitState.FoundMonitor)
+        }
+        
     }
 
 }
