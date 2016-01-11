@@ -43,7 +43,10 @@ class HeartRateKitTests: XCTestCase {
             let state = self.heartRateKit.state
             XCTAssertEqual(state, HeartRateKitState.FoundMonitor)
         }
-        
     }
+    
+    func test
+    
+    
 
 }

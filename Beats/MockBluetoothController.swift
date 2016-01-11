@@ -29,9 +29,6 @@ class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentra
         guard let centralManager = centralManager else { return }
         centralManager.scanForPeripheralsWithServices(nil, options: nil)
         state = .Scanning
-        
-//        guard let onFound = onFound else { return }
-//        onFound("Yo")
     }
     
     

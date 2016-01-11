@@ -30,12 +30,9 @@ class MockCentralManager: NSObject {
     // MARK: Helper methods
     
     func discoverPeripheral() {
-        print("Discovered peripheral")
-        
         discoveredPeripheral = true
-        
+    
         let peripheral = MockPeripheral()
-        
         delegate?.centralManager(self, didDiscoverPeripheral: peripheral, advertisementData: ["CBAdvertisementDataLocalNameKey": "MockPolarH7"], RSSI: 42)
         
     }
