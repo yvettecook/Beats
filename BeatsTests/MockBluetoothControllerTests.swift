@@ -13,6 +13,8 @@ import XCTest
 class MockBluetoothControllerTests: XCTestCase {
     
     var mockBluetoothController: MockBluetoothController!
+    
+    let blankCompletionHandler = { (_: Bool) -> Void in }
 
     override func setUp() {
         mockBluetoothController = MockBluetoothController()
@@ -32,23 +34,27 @@ class MockBluetoothControllerTests: XCTestCase {
     }
     
     func testScanForAvailableMonitorsChangesState() {
-        mockBluetoothController.scanForAvailableMonitors()
+        mockBluetoothController.scanForAvailableMonitors(blankCompletionHandler)
         let state = mockBluetoothController.state
         
         XCTAssertEqual(state, BluetoothControllerState.Scanning) 
     }
     
     func testOnScanForAvailableMonitorsCentralManagerScanMethodCalled() {
-        mockBluetoothController.scanForAvailableMonitors()
+        mockBluetoothController.scanForAvailableMonitors(blankCompletionHandler)
         XCTAssertTrue(mockBluetoothController!.centralManager!.scanForPeripheralsWithServicesCalled)
     }
     
     func testOnScanForAvailableMonitorsPeripheralIsFound() {
-        mockBluetoothController.scanForAvailableMonitors()
+        let expectation = expectationWithDescription("didDiscoverPeripheral should be called")
         
-        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 4 * Int64(NSEC_PER_SEC))
-        dispatch_after(time, dispatch_get_main_queue()) {
+        let completionHandler = { (success: Bool) -> Void in
             XCTAssertTrue(self.mockBluetoothController.didDiscoverPeripheralCalled)
+            expectation.fulfill()
         }
+    
+        mockBluetoothController.scanForAvailableMonitors(completionHandler)
+        
+        waitForExpectationsWithTimeout(4.0, handler: nil)
     }
 }

@@ -30,6 +30,8 @@ class MockCentralManager: NSObject {
     // MARK: Helper methods
     
     func discoverPeripheral() {
+        print("******* DISCOVER PERIPHERAL *******")
+        
         discoveredPeripheral = true
     
         let peripheral = MockPeripheral()

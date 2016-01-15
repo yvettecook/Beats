@@ -39,7 +39,8 @@ class MockCentralManagerTests: XCTestCase {
         dispatch_after(time, dispatch_get_main_queue()) {
             XCTAssertTrue(self.mockCentralManager.discoveredPeripheral)
         }
-        
     }
+    
+    
     
 }

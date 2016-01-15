@@ -20,8 +20,12 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
         super.init()
     }
     
-    func scanForMonitors() {
-        bluetoothController!.scanForAvailableMonitors()
+    func scanForMonitors(completion: Bool -> Void) {
+        bluetoothController!.scanForAvailableMonitors(completion)
+    }
+    
+    func connectToAvailableMonitor() {
+        
     }
         
     // MARK: BluetoothControllerDelegate
@@ -30,6 +34,8 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
         switch state {
         case .Scanning:
             self.state = .Scanning
+        case .FoundMonitor:
+            self.state = .FoundMonitor
         default:
             break
         }

@@ -23,6 +23,7 @@
 		1AA255A41C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255A31C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift */; };
 		1AA255A61C42F19700A7DAE5 /* MockCentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255A51C42F19700A7DAE5 /* MockCentralManagerDelegate.swift */; };
 		1AB1B5DA1C43CD3100AF8A6D /* MockPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */; };
+		1AE2DD301C4936FD00FB395E /* UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD2F1C4936FD00FB395E /* UITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		1AA255A31C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothControllerDelegateProtocol.swift; sourceTree = "<group>"; };
 		1AA255A51C42F19700A7DAE5 /* MockCentralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCentralManagerDelegate.swift; sourceTree = "<group>"; };
 		1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheral.swift; sourceTree = "<group>"; };
+		1AE2DD2F1C4936FD00FB395E /* UITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				1AA255851C40246300A7DAE5 /* Info.plist */,
+				1AE2DD2F1C4936FD00FB395E /* UITest.swift */,
 			);
 			path = BeatsUITests;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE2DD301C4936FD00FB395E /* UITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,10 +487,12 @@
 		1AA2558F1C40246300A7DAE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BeatsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Yvette.BeatsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_TARGET_NAME = Beats;
 				USES_XCTRUNNER = YES;
 			};
@@ -495,6 +501,7 @@
 		1AA255901C40246300A7DAE5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BeatsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Yvette.BeatsUITests;
