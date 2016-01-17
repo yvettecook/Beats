@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentralManagerDelegate {
+class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentralManagerDelegate, MockPeripheralDelegate {
     
     var state: BluetoothControllerState {
         didSet {
@@ -33,7 +33,7 @@ class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentra
     }
     
     
-    // MARK: MockCBCentralMethods
+    // MARK: MockCentralManagerDelegate
     
     func centralManager(central: MockCentralManager, didDiscoverPeripheral peripheral: MockPeripheral,
         advertisementData: [String : AnyObject], RSSI: NSNumber) {
@@ -45,14 +45,23 @@ class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentra
     func centralManager(central: MockCentralManager, didConnectPeripheral peripheral: MockPeripheral) {
         didConnectPeripheralCalled = true
         state = .ConnectedMonitor
+        peripheral.delegate = self
+        peripheral.discoverServices(nil)
     }
     
+    // MARK: MockPeripheralDelegate
+    
+    func peripheral(peripheral: MockPeripheral, didDiscoverServices error: NSError?) {
+        didDiscoverServicesCalled = true
+    }
+ 
     
     
     // MARK: Method called Flags
     
     var didDiscoverPeripheralCalled = false
     var didConnectPeripheralCalled = false
+    var didDiscoverServicesCalled = false
     
 }
 

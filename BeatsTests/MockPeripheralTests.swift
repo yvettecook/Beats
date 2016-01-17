@@ -7,18 +7,29 @@
 //
 
 import XCTest
+import CoreBluetooth
 
 @testable import Beats
 
 class MockPeripheralTests: XCTestCase {
     
+    var mockPeripheral: MockPeripheral!
+    
     override func setUp() {
+        mockPeripheral = MockPeripheral()
+        mockPeripheral.delegate = MockBluetoothController()
         super.setUp()
     }
     
     override func tearDown() {
         super.tearDown()
     }
+    
+    func testCanDiscoverServices() {
+        mockPeripheral.discoverServices(nil)
+        XCTAssertTrue(mockPeripheral.didDiscoverServicesCalled)
+    }
+    
 
 }
 

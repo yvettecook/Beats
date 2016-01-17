@@ -52,7 +52,6 @@ class MockCentralManagerTests: XCTestCase {
         mockCentralManager.connectPeripheral(mockPeripheral, options: nil)
         
         XCTAssertTrue(self.mockCentralManager.connectedToPeripheral)
-        
     }
 
 }

@@ -1,5 +1,5 @@
 //
-//  MockBluetoothControllerTests.swift
+//  MockBluetoothControllerConnectionTests.swift
 //  Beats
 //
 //  Created by Yvette Cook on 08/01/2016.
@@ -10,7 +10,7 @@ import XCTest
 
 @testable import Beats
 
-class MockBluetoothControllerTests: XCTestCase {
+class MockBluetoothControllerConnectionTests: XCTestCase {
     
     var mockBluetoothController: MockBluetoothController!
     let mockPeripheral = MockPeripheral()
@@ -75,7 +75,7 @@ class MockBluetoothControllerTests: XCTestCase {
     }
     
     func testStateChangeToConnected() {
-        self.mockBluetoothController.centralManager(self.mockBluetoothController.centralManager!, didConnectPeripheral: mockPeripheral)
+        mockBluetoothController.centralManager(self.mockBluetoothController.centralManager!, didConnectPeripheral: mockPeripheral)
         
         let state = self.mockBluetoothController.state
         

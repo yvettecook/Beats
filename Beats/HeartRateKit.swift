@@ -15,6 +15,8 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
     
     var availableDeviceNames = [String]()
     
+    var currentHeartRate: Int?
+    
     override init() {
         state = .Inactive
         super.init()
@@ -23,9 +25,7 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
     func scanForMonitors() {
         bluetoothController!.scanForAvailableMonitors()
     }
-
     
-        
     // MARK: BluetoothControllerDelegate
     
     func bluetooothControllerStateChanged(state: BluetoothControllerState) {
@@ -39,6 +39,10 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
         default:
             break
         }
+    }
+    
+    func heartRateUpdated(hr: Int) {
+        
     }
 
 }

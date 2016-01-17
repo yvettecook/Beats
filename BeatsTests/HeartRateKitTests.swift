@@ -66,5 +66,20 @@ class HeartRateKitTests: XCTestCase {
         
         waitForExpectationsWithTimeout(4.0, handler: nil)
     }
+    
+    func testCanReceiveHeartRate() {
+        let expectation = expectationWithDescription("Should receive a heart rate from Bluetooth Controller")
+        
+        let completionBlock = { () -> Void in
+            XCTAssertNotNil(self.heartRateKit.currentHeartRate)
+            expectation.fulfill()
+        }
+        
+        heartRateKit.scanForMonitors()
+        
+        asyncTest(completionBlock, wait: 5)
+        
+        waitForExpectationsWithTimeout(5.5, handler: nil)
+    }
 
 }

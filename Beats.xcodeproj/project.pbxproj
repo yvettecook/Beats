@@ -17,7 +17,6 @@
 		1AA255941C4024F900A7DAE5 /* HeartRateKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255931C4024F900A7DAE5 /* HeartRateKit.swift */; };
 		1AA255961C40269D00A7DAE5 /* BluetoothControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255951C40269D00A7DAE5 /* BluetoothControllerProtocol.swift */; };
 		1AA255981C40270B00A7DAE5 /* MockBluetoothController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255971C40270B00A7DAE5 /* MockBluetoothController.swift */; };
-		1AA2559A1C4027F800A7DAE5 /* MockBluetoothControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255991C4027F800A7DAE5 /* MockBluetoothControllerTests.swift */; };
 		1AA2559C1C4029CC00A7DAE5 /* MockCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA2559B1C4029CC00A7DAE5 /* MockCentralManager.swift */; };
 		1AA2559E1C42E6E600A7DAE5 /* MockCentralManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA2559D1C42E6E600A7DAE5 /* MockCentralManagerTests.swift */; };
 		1AA255A41C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255A31C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift */; };
@@ -25,6 +24,9 @@
 		1AB1B5DA1C43CD3100AF8A6D /* MockPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */; };
 		1AE2DD301C4936FD00FB395E /* UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD2F1C4936FD00FB395E /* UITest.swift */; };
 		1AE2DD321C4BBE9200FB395E /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD311C4BBE9200FB395E /* TestHelpers.swift */; };
+		1AE2DD341C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD331C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift */; };
+		1AE2DD361C4BDBFD00FB395E /* MockBluetoothControllerPeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD351C4BDBFD00FB395E /* MockBluetoothControllerPeripheralTests.swift */; };
+		1AE2DD3C1C4C06B400FB395E /* MockPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD3B1C4C06B400FB395E /* MockPeripheralDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +63,6 @@
 		1AA255931C4024F900A7DAE5 /* HeartRateKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateKit.swift; sourceTree = "<group>"; };
 		1AA255951C40269D00A7DAE5 /* BluetoothControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothControllerProtocol.swift; sourceTree = "<group>"; };
 		1AA255971C40270B00A7DAE5 /* MockBluetoothController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBluetoothController.swift; sourceTree = "<group>"; };
-		1AA255991C4027F800A7DAE5 /* MockBluetoothControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBluetoothControllerTests.swift; sourceTree = "<group>"; };
 		1AA2559B1C4029CC00A7DAE5 /* MockCentralManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCentralManager.swift; sourceTree = "<group>"; };
 		1AA2559D1C42E6E600A7DAE5 /* MockCentralManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCentralManagerTests.swift; sourceTree = "<group>"; };
 		1AA255A31C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothControllerDelegateProtocol.swift; sourceTree = "<group>"; };
@@ -69,6 +70,9 @@
 		1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheral.swift; sourceTree = "<group>"; };
 		1AE2DD2F1C4936FD00FB395E /* UITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITest.swift; sourceTree = "<group>"; };
 		1AE2DD311C4BBE9200FB395E /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		1AE2DD331C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBluetoothControllerConnectionTests.swift; sourceTree = "<group>"; };
+		1AE2DD351C4BDBFD00FB395E /* MockBluetoothControllerPeripheralTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBluetoothControllerPeripheralTests.swift; sourceTree = "<group>"; };
+		1AE2DD3B1C4C06B400FB395E /* MockPeripheralDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheralDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 				1AA2559B1C4029CC00A7DAE5 /* MockCentralManager.swift */,
 				1AA255A51C42F19700A7DAE5 /* MockCentralManagerDelegate.swift */,
 				1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */,
+				1AE2DD3B1C4C06B400FB395E /* MockPeripheralDelegate.swift */,
 				1AA2556A1C40246300A7DAE5 /* Assets.xcassets */,
 				1AA2556C1C40246300A7DAE5 /* LaunchScreen.storyboard */,
 				1AA2556F1C40246300A7DAE5 /* Info.plist */,
@@ -141,7 +146,8 @@
 			children = (
 				1AA2557A1C40246300A7DAE5 /* Info.plist */,
 				1AA255911C4024C400A7DAE5 /* HeartRateKitTests.swift */,
-				1AA255991C4027F800A7DAE5 /* MockBluetoothControllerTests.swift */,
+				1AE2DD331C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift */,
+				1AE2DD351C4BDBFD00FB395E /* MockBluetoothControllerPeripheralTests.swift */,
 				1AA2559D1C42E6E600A7DAE5 /* MockCentralManagerTests.swift */,
 				1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */,
 				1AE2DD311C4BBE9200FB395E /* TestHelpers.swift */,
@@ -295,6 +301,7 @@
 				1AA255661C40246300A7DAE5 /* ViewController.swift in Sources */,
 				1AA255A41C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift in Sources */,
 				1AB1B5DA1C43CD3100AF8A6D /* MockPeripheral.swift in Sources */,
+				1AE2DD3C1C4C06B400FB395E /* MockPeripheralDelegate.swift in Sources */,
 				1AA255981C40270B00A7DAE5 /* MockBluetoothController.swift in Sources */,
 				1AA255641C40246300A7DAE5 /* AppDelegate.swift in Sources */,
 				1AA2559C1C4029CC00A7DAE5 /* MockCentralManager.swift in Sources */,
@@ -305,10 +312,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE2DD361C4BDBFD00FB395E /* MockBluetoothControllerPeripheralTests.swift in Sources */,
 				1AA2559E1C42E6E600A7DAE5 /* MockCentralManagerTests.swift in Sources */,
 				1AE2DD321C4BBE9200FB395E /* TestHelpers.swift in Sources */,
+				1AE2DD341C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift in Sources */,
 				1A8F45851C443382002B45B7 /* MockPeripheralTests.swift in Sources */,
-				1AA2559A1C4027F800A7DAE5 /* MockBluetoothControllerTests.swift in Sources */,
 				1AA255921C4024C400A7DAE5 /* HeartRateKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
