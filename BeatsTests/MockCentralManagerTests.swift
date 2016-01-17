@@ -13,6 +13,7 @@ import XCTest
 class MockCentralManagerTests: XCTestCase {
     
     var mockCentralManager: MockCentralManager!
+    let mockPeripheral = MockPeripheral()
 
     override func setUp() {
         mockCentralManager = MockCentralManager(delegate: MockBluetoothController(), queue: nil)
@@ -32,15 +33,26 @@ class MockCentralManagerTests: XCTestCase {
         XCTAssertTrue(mockCentralManager.scanForPeripheralsWithServicesCalled)
     }
 
-    func testFindsPeripheralOnScanForPeripherals() {        
+    func testFindsPeripheralOnScanForPeripherals() {
+        let expectation = expectationWithDescription("Should find Peripheral when scanning")
+        
         mockCentralManager.scanForPeripheralsWithServices(nil, options: nil)
         
-        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 4 * Int64(NSEC_PER_SEC))
-        dispatch_after(time, dispatch_get_main_queue()) {
+        let completion = { () -> Void in
             XCTAssertTrue(self.mockCentralManager.discoveredPeripheral)
+            expectation.fulfill()
         }
+        
+        asyncTest(completion, wait: 2)
+        
+        waitForExpectationsWithTimeout(3, handler: nil)
     }
     
-    
-    
+    func testCanConnectToPeripheral() {
+        mockCentralManager.connectPeripheral(mockPeripheral, options: nil)
+        
+        XCTAssertTrue(self.mockCentralManager.connectedToPeripheral)
+        
+    }
+
 }

@@ -26,25 +26,36 @@ class MockCentralManager: NSObject {
         scanTimer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "discoverPeripheral", userInfo: nil, repeats: false)
     }
     
+    func connectPeripheral(peripheral: MockPeripheral, options: [String: AnyObject]?) {
+        connectedToPeripheral = true
+       
+        let timerArray = [peripheral]
+        _ = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "connectPeripheral:", userInfo: timerArray, repeats: false)
+    }
     
     // MARK: Helper methods
     
     func discoverPeripheral() {
-        print("******* DISCOVER PERIPHERAL *******")
-        
         discoveredPeripheral = true
     
         let peripheral = MockPeripheral()
         delegate?.centralManager(self, didDiscoverPeripheral: peripheral, advertisementData: ["CBAdvertisementDataLocalNameKey": "MockPolarH7"], RSSI: 42)
-        
     }
     
-    
-    
+    func connectPeripheral(timer: NSTimer?) {
+        guard
+            let timer = timer,
+            let userInfo = timer.userInfo,
+            let peripheral = userInfo[0] as? MockPeripheral
+        else { return }
+        delegate?.centralManager(self, didConnectPeripheral: peripheral)
+        timer.invalidate()
+    }
     
     // MARK: Method Flags
     
     var scanForPeripheralsWithServicesCalled = false
     var discoveredPeripheral = false
+    var connectedToPeripheral = true
 
 }

@@ -10,6 +10,6 @@ protocol BluetoothControllerProtocol {
     
     var delegate: BluetoothControllerDelegate? { get set }
     
-    func scanForAvailableMonitors(completion: (Bool) -> Void)
+    func scanForAvailableMonitors()
     
 } 

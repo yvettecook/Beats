@@ -13,7 +13,7 @@ import XCTest
 class HeartRateKitTests: XCTestCase {
     
     var heartRateKit: HeartRateKit!
-
+    
     override func setUp() {
         heartRateKit = HeartRateKit()
         heartRateKit.bluetoothController = MockBluetoothController()
@@ -30,11 +30,7 @@ class HeartRateKitTests: XCTestCase {
     }
     
     func testCanTryConnectToHeartRateMonitor() {
-        let completionBlock = { (success: Bool) -> Void in
-            print("Yo")
-        }
-        
-        heartRateKit.scanForMonitors(completionBlock)
+        heartRateKit.scanForMonitors()
         let state = heartRateKit.state
         XCTAssertEqual(state, HeartRateKitState.Scanning)
     }
@@ -42,25 +38,33 @@ class HeartRateKitTests: XCTestCase {
     func testStateChangeWhenDeviceFound() {
         let expectation = expectationWithDescription("State will change to .FoundMonitor")
         
-        let completionBlock = { (success: Bool) -> Void in
+        let completionBlock = { () -> Void in
             let state = self.heartRateKit.state
             XCTAssertEqual(state, HeartRateKitState.FoundMonitor)
             expectation.fulfill()
         }
         
-        heartRateKit.scanForMonitors(completionBlock)
+        heartRateKit.scanForMonitors()
         
-        waitForExpectationsWithTimeout(5.0, handler: nil)
+        asyncTest(completionBlock, wait: 3)
+        
+        waitForExpectationsWithTimeout(3, handler: nil)
     }
     
-//    func testCanConnectToFoundMonitor() {
-//        heartRateKit.scanForMonitors()
-//        let state = self.heartRateKit.state
-//        print("State: \(state)")
-//        XCTAssertEqual(state, HeartRateKitState.Connected)
-//    }
-    
-
-    
+    func testCanConnectToAvailableMonitor() {
+        let expectation = expectationWithDescription("Should connect to available monitor")
+        
+        let completionBlock = { () -> Void in
+            let state = self.heartRateKit.state
+            XCTAssertEqual(state, HeartRateKitState.Connected)
+            expectation.fulfill()
+        }
+        
+        heartRateKit.scanForMonitors()
+        
+        asyncTest(completionBlock, wait: 4)
+        
+        waitForExpectationsWithTimeout(4.0, handler: nil)
+    }
 
 }
