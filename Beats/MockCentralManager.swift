@@ -23,7 +23,7 @@ class MockCentralManager: NSObject {
     func scanForPeripheralsWithServices(serviceUUIDs: [CBUUID]?, options: [String : AnyObject]?) {
         scanForPeripheralsWithServicesCalled = true
         
-        scanTimer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "discoverPeripheral", userInfo: nil, repeats: false)
+        scanTimer = NSTimer.scheduledTimerWithTimeInterval(1.5, target: self, selector: "discoverPeripheral", userInfo: nil, repeats: false)
     }
     
     func connectPeripheral(peripheral: MockPeripheral, options: [String: AnyObject]?) {

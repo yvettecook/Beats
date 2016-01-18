@@ -46,9 +46,9 @@ class HeartRateKitTests: XCTestCase {
         
         heartRateKit.scanForMonitors()
         
-        asyncTest(completionBlock, wait: 3)
+        asyncTest(completionBlock, wait: 2)
         
-        waitForExpectationsWithTimeout(3, handler: nil)
+        waitForExpectationsWithTimeout(2.5, handler: nil)
     }
     
     func testCanConnectToAvailableMonitor() {

@@ -39,4 +39,26 @@ class MockBluetoothControllerPeripheralTests: XCTestCase {
         XCTAssertTrue(mockBluetoothController.didDiscoverServicesCalled)
     }
     
+    func testIfPeripheralHasHeartRateServiceDiscoverCharacteristics() {
+        XCTAssertTrue(mockBluetoothController.didDiscoverCharacteristicsCalled)
+    }
+    
+    func testReceivesUpdatesOnHeartRate() {
+        let expectation = expectationWithDescription("Should see a pulse")
+        
+        let completion = { () -> Void in
+            XCTAssertTrue(self.mockBluetoothController.hrNotificationReceived)
+            expectation.fulfill()
+        }
+        
+        mockPeripheral.setHeartRateMode(.SteadyResting)
+        asyncTest(completion, wait: 5)
+        
+        waitForExpectationsWithTimeout(5.5, handler: nil)
+    }
+    
+    func testIfPeripheralHasNoHeartRateService() {
+        XCTFail()
+    }
+    
 }

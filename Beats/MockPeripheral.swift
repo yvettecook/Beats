@@ -12,15 +12,139 @@ class MockPeripheral : NSObject {
     
     var delegate: MockPeripheralDelegate?
     
+    var services: [CBService]?
+    var heartRateService: CBService?
+    
+    var notifyOnHRUpdate = false
+    
+    var availableHRs: [Int]?
+    
+    override init() {
+        self.services = [CBService]()
+        super.init()
+        self.heartRateService = createHRService()
+    }
+    
     func discoverServices(serviceUUIDS: [CBUUID]?) {
         didDiscoverServicesCalled = true
-        
+        guard let service = heartRateService else { return }
+        services?.append(service)
         delegate?.peripheral(self, didDiscoverServices: nil)
+    }
+    
+    func discoverCharacteristics(characteristicUUIDs: [CBUUID]?, forService service: CBService) {
+        delegate?.peripheral(self, didDiscoverCharacteristics: nil)
     }
     
     
     // MARK: Method flags
     
     var didDiscoverServicesCalled = false
+    
+    
+    // MARK: Services
+    
+    func createHRService() -> CBService {
+        let heartRateService = CBMutableService.init(type: CBUUID(string: "180D"), primary: true)
+        
+        let measurementUUID = CBUUID(string: "2A37")
+        let properties = CBCharacteristicProperties.Notify
+        let permissions = CBAttributePermissions.Writeable
+        
+        let heartRateMeasurementCharacteristic = CBMutableCharacteristic(type: measurementUUID, properties: properties, value: nil, permissions: permissions)
+        
+        heartRateService.characteristics = [heartRateMeasurementCharacteristic]
+        
+        return heartRateService
+    }
+    
+    // MARK: Characteristics
+    
+    func setNotifyValue(enabled: Bool, forCharacteristic characteristic: CBCharacteristic) {
+        if characteristic == getHeartRateMeasurementCharacteristic() {
+            notifyOnHRUpdate = true
+        }
+    }
+    
+    func writeValue(data: NSData, forCharacteristic characteristic: CBCharacteristic, type: CBCharacteristicWriteType) {
+        delegate?.peripheral(self, didUpdateValueForCharacteristic: characteristic, error: nil)
+    }
+    
+    // MARK: Heart Rare
+    func setHeartRateMode(mode: MockHeartRateMode) {
+        switch mode {
+        case .SteadyResting:
+            let average = 61
+            availableHRs = [average - 2, average - 1, average, average + 1, average + 2]
+            startPulse()
+        }
+    }
+    
+    func startPulse() {
+        let pulseTimer = NSTimer(timeInterval: 0.5,
+                                 target: self,
+                                 selector: "updateHR",
+                                 userInfo: nil,
+                                 repeats: true)
+        
+        NSRunLoop.mainRunLoop().addTimer(pulseTimer, forMode: NSRunLoopCommonModes)
+    }
+    
+    func updateHR() {
+        guard
+            let currentHeartRate = availableHRs?.randomItem(),
+            let characteristic = getHeartRateMeasurementCharacteristic()
+            else { return }
+        
+        let data = heartRateToNSData(currentHeartRate)
+        writeValue(data, forCharacteristic: characteristic, type: .WithoutResponse)
+    }
+    
+    enum MockHeartRateMode {
+        case SteadyResting
+    }
+    
+    func heartRateToNSData(var hr: Int) -> NSData {
+        let data = NSData(bytes: &hr, length: sizeof(Int))
+        return data
+    }
+
+}
+
+extension Array {
+
+    func randomItem() -> Element {
+        let index = Int(arc4random_uniform(UInt32(self.count)))
+        return self[index]
+    }
+    
+}
+
+extension MockPeripheral {
+    
+    func getHeartRateService() -> CBService? {
+        guard let services = self.services else { return nil }
+        
+        for service in services {
+            if service.UUID.UUIDString == "180D" { return service }
+        }
+        
+        return nil
+    }
+    
+    func getHeartRateMeasurementCharacteristic() -> CBCharacteristic? {
+        guard
+            let hrService = getHeartRateService(),
+            let characteristics = hrService.characteristics
+            else { return nil }
+        
+        for characteristic in characteristics {
+            if characteristic.UUID.UUIDString == "2A37" {
+                return characteristic
+            }
+        }
+        
+        return nil
+    }
     
 }

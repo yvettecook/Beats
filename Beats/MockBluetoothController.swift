@@ -6,7 +6,7 @@
 //  Copyright © 2016 Yvette. All rights reserved.
 //
 
-import Foundation
+import CoreBluetooth
 
 class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentralManagerDelegate, MockPeripheralDelegate {
     
@@ -53,8 +53,22 @@ class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentra
     
     func peripheral(peripheral: MockPeripheral, didDiscoverServices error: NSError?) {
         didDiscoverServicesCalled = true
+        
+        guard let hrService = peripheral.getHeartRateService() else { return }
+        peripheral.discoverCharacteristics([], forService:hrService)
     }
- 
+    
+    func peripheral(peripheral: MockPeripheral, didDiscoverCharacteristics error: NSError?) {
+        didDiscoverCharacteristicsCalled = true
+        
+        guard let hrMeasurement = peripheral.getHeartRateMeasurementCharacteristic() else { return }
+        peripheral.setNotifyValue(true, forCharacteristic: hrMeasurement)
+    }
+    
+    func peripheral(peripheral: MockPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
+        hrNotificationReceived = true
+        print("WOOOHHHHOOOOO")
+    }
     
     
     // MARK: Method called Flags
@@ -62,6 +76,8 @@ class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentra
     var didDiscoverPeripheralCalled = false
     var didConnectPeripheralCalled = false
     var didDiscoverServicesCalled = false
+    var didDiscoverCharacteristicsCalled = false
+    var hrNotificationReceived = false
     
 }
 

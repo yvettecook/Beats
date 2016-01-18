@@ -6,10 +6,12 @@
 //  Copyright © 2016 Yvette. All rights reserved.
 //
 
-import Foundation
+import CoreBluetooth
 
 protocol MockPeripheralDelegate {
     
     func peripheral(peripheral: MockPeripheral, didDiscoverServices error: NSError?)
+    func peripheral(peripheral: MockPeripheral, didDiscoverCharacteristics error: NSError?)
+    func peripheral(peripheral: MockPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?)
     
 }

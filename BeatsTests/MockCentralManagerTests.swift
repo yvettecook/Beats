@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import CoreBluetooth
 
 @testable import Beats
 
@@ -14,9 +15,13 @@ class MockCentralManagerTests: XCTestCase {
     
     var mockCentralManager: MockCentralManager!
     let mockPeripheral = MockPeripheral()
-
+    
+    let heartRateUUID = CBUUID(string: "180D")
+    var heartRateService : CBMutableService?
+    
     override func setUp() {
         mockCentralManager = MockCentralManager(delegate: MockBluetoothController(), queue: nil)
+        heartRateService = CBMutableService(type: heartRateUUID, primary: true)
         super.setUp()
     }
     

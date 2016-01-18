@@ -18,6 +18,7 @@ class MockPeripheralTests: XCTestCase {
     override func setUp() {
         mockPeripheral = MockPeripheral()
         mockPeripheral.delegate = MockBluetoothController()
+        mockPeripheral.discoverServices(nil)
         super.setUp()
     }
     
@@ -26,11 +27,33 @@ class MockPeripheralTests: XCTestCase {
     }
     
     func testCanDiscoverServices() {
-        mockPeripheral.discoverServices(nil)
         XCTAssertTrue(mockPeripheral.didDiscoverServicesCalled)
     }
     
+    func testHasHeartRateServiceCBUUID() {
+        XCTAssertNotNil(mockPeripheral.services)
+    }
+    
+    func testCanReturnHRService() {
+        let result = mockPeripheral.getHeartRateService()
+        XCTAssertNotNil(result)
+    }
+    
+    func testCanReturnHRMeasurementCharacteristic() {
+        let result = mockPeripheral.getHeartRateMeasurementCharacteristic()
+        XCTAssertNotNil(result)
+    }
+    
+    func testCanChangeNotifyValueForCharacteristic() {
+        let char = mockPeripheral.getHeartRateMeasurementCharacteristic()
+        mockPeripheral.setNotifyValue(true, forCharacteristic: char!)
+        XCTAssertTrue(mockPeripheral.notifyOnHRUpdate)
+    }
 
+    func testCanUpdateHeartRateValueForCharacteristic() {
+        
+    }
+    
 }
 
 

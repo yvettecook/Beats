@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "MockPeripheral.discoverServices([CBUUID]?) -&gt; ():MockPeripheral.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "heartRateService!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MockCentralManager.connectPeripheral(MockPeripheral, options : [String : AnyObject]?) -&gt; ():MockCentralManager.swift">
          <PersistentStrings>
             <PersistentString
