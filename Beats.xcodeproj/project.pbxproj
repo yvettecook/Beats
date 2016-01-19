@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2D10AB1C4E691B0076F7E4 /* MockCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D10AA1C4E691B0076F7E4 /* MockCharacteristic.swift */; };
 		1A8F45851C443382002B45B7 /* MockPeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */; };
 		1AA255641C40246300A7DAE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255631C40246300A7DAE5 /* AppDelegate.swift */; };
 		1AA255661C40246300A7DAE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255651C40246300A7DAE5 /* ViewController.swift */; };
@@ -27,6 +28,8 @@
 		1AE2DD341C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD331C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift */; };
 		1AE2DD361C4BDBFD00FB395E /* MockBluetoothControllerPeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD351C4BDBFD00FB395E /* MockBluetoothControllerPeripheralTests.swift */; };
 		1AE2DD3C1C4C06B400FB395E /* MockPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD3B1C4C06B400FB395E /* MockPeripheralDelegate.swift */; };
+		1AE2DD401C4E57C500FB395E /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD3F1C4E57C500FB395E /* ArrayExtension.swift */; };
+		1AE2DD431C4E646E00FB395E /* MockHeartRateMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD421C4E646E00FB395E /* MockHeartRateMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A2D10AA1C4E691B0076F7E4 /* MockCharacteristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCharacteristic.swift; sourceTree = "<group>"; };
 		1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheralTests.swift; sourceTree = "<group>"; };
 		1AA255601C40246300A7DAE5 /* Beats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA255631C40246300A7DAE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 		1AE2DD331C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBluetoothControllerConnectionTests.swift; sourceTree = "<group>"; };
 		1AE2DD351C4BDBFD00FB395E /* MockBluetoothControllerPeripheralTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBluetoothControllerPeripheralTests.swift; sourceTree = "<group>"; };
 		1AE2DD3B1C4C06B400FB395E /* MockPeripheralDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheralDelegate.swift; sourceTree = "<group>"; };
+		1AE2DD3F1C4E57C500FB395E /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		1AE2DD421C4E646E00FB395E /* MockHeartRateMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockHeartRateMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A2D10AC1C4E95090076F7E4 /* HeartRateKit */ = {
+			isa = PBXGroup;
+			children = (
+				1AA255931C4024F900A7DAE5 /* HeartRateKit.swift */,
+				1AA255951C40269D00A7DAE5 /* BluetoothControllerProtocol.swift */,
+				1AA255971C40270B00A7DAE5 /* MockBluetoothController.swift */,
+				1AA255A31C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift */,
+				1AA2559B1C4029CC00A7DAE5 /* MockCentralManager.swift */,
+				1AA255A51C42F19700A7DAE5 /* MockCentralManagerDelegate.swift */,
+				1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */,
+				1A2D10AA1C4E691B0076F7E4 /* MockCharacteristic.swift */,
+				1AE2DD421C4E646E00FB395E /* MockHeartRateMode.swift */,
+				1AE2DD3B1C4C06B400FB395E /* MockPeripheralDelegate.swift */,
+			);
+			name = HeartRateKit;
+			sourceTree = "<group>";
+		};
+		1A2D10AD1C4E95170076F7E4 /* HeartRateKit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1AA255911C4024C400A7DAE5 /* HeartRateKitTests.swift */,
+				1AE2DD331C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift */,
+				1AE2DD351C4BDBFD00FB395E /* MockBluetoothControllerPeripheralTests.swift */,
+				1AA2559D1C42E6E600A7DAE5 /* MockCentralManagerTests.swift */,
+				1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */,
+				1AE2DD311C4BBE9200FB395E /* TestHelpers.swift */,
+			);
+			name = "HeartRateKit Tests";
+			sourceTree = "<group>";
+		};
 		1AA255571C40246300A7DAE5 = {
 			isa = PBXGroup;
 			children = (
@@ -126,14 +162,8 @@
 				1AA255631C40246300A7DAE5 /* AppDelegate.swift */,
 				1AA255651C40246300A7DAE5 /* ViewController.swift */,
 				1AA255671C40246300A7DAE5 /* Main.storyboard */,
-				1AA255931C4024F900A7DAE5 /* HeartRateKit.swift */,
-				1AA255951C40269D00A7DAE5 /* BluetoothControllerProtocol.swift */,
-				1AA255971C40270B00A7DAE5 /* MockBluetoothController.swift */,
-				1AA255A31C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift */,
-				1AA2559B1C4029CC00A7DAE5 /* MockCentralManager.swift */,
-				1AA255A51C42F19700A7DAE5 /* MockCentralManagerDelegate.swift */,
-				1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */,
-				1AE2DD3B1C4C06B400FB395E /* MockPeripheralDelegate.swift */,
+				1A2D10AC1C4E95090076F7E4 /* HeartRateKit */,
+				1AE2DD411C4E57C900FB395E /* Helpers */,
 				1AA2556A1C40246300A7DAE5 /* Assets.xcassets */,
 				1AA2556C1C40246300A7DAE5 /* LaunchScreen.storyboard */,
 				1AA2556F1C40246300A7DAE5 /* Info.plist */,
@@ -145,12 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				1AA2557A1C40246300A7DAE5 /* Info.plist */,
-				1AA255911C4024C400A7DAE5 /* HeartRateKitTests.swift */,
-				1AE2DD331C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift */,
-				1AE2DD351C4BDBFD00FB395E /* MockBluetoothControllerPeripheralTests.swift */,
-				1AA2559D1C42E6E600A7DAE5 /* MockCentralManagerTests.swift */,
-				1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */,
-				1AE2DD311C4BBE9200FB395E /* TestHelpers.swift */,
+				1A2D10AD1C4E95170076F7E4 /* HeartRateKit Tests */,
 			);
 			path = BeatsTests;
 			sourceTree = "<group>";
@@ -162,6 +187,14 @@
 				1AE2DD2F1C4936FD00FB395E /* UITest.swift */,
 			);
 			path = BeatsUITests;
+			sourceTree = "<group>";
+		};
+		1AE2DD411C4E57C900FB395E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1AE2DD3F1C4E57C500FB395E /* ArrayExtension.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,7 +328,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2D10AB1C4E691B0076F7E4 /* MockCharacteristic.swift in Sources */,
 				1AA255A61C42F19700A7DAE5 /* MockCentralManagerDelegate.swift in Sources */,
+				1AE2DD431C4E646E00FB395E /* MockHeartRateMode.swift in Sources */,
 				1AA255961C40269D00A7DAE5 /* BluetoothControllerProtocol.swift in Sources */,
 				1AA255941C4024F900A7DAE5 /* HeartRateKit.swift in Sources */,
 				1AA255661C40246300A7DAE5 /* ViewController.swift in Sources */,
@@ -305,6 +340,7 @@
 				1AA255981C40270B00A7DAE5 /* MockBluetoothController.swift in Sources */,
 				1AA255641C40246300A7DAE5 /* AppDelegate.swift in Sources */,
 				1AA2559C1C4029CC00A7DAE5 /* MockCentralManager.swift in Sources */,
+				1AE2DD401C4E57C500FB395E /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

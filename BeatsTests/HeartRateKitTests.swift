@@ -72,6 +72,7 @@ class HeartRateKitTests: XCTestCase {
         
         let completionBlock = { () -> Void in
             XCTAssertNotNil(self.heartRateKit.currentHeartRate)
+            XCTAssertTrue(self.heartRateKit.currentHeartRate > 50)
             expectation.fulfill()
         }
         

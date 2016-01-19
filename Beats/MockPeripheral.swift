@@ -40,6 +40,7 @@ class MockPeripheral : NSObject {
     // MARK: Method flags
     
     var didDiscoverServicesCalled = false
+    var updateHRCalled = false
     
     
     // MARK: Services
@@ -51,7 +52,7 @@ class MockPeripheral : NSObject {
         let properties = CBCharacteristicProperties.Notify
         let permissions = CBAttributePermissions.Writeable
         
-        let heartRateMeasurementCharacteristic = CBMutableCharacteristic(type: measurementUUID, properties: properties, value: nil, permissions: permissions)
+        let heartRateMeasurementCharacteristic = MockCharacteristic.init(type: measurementUUID, properties: properties, permissions: permissions)
         
         heartRateService.characteristics = [heartRateMeasurementCharacteristic]
         
@@ -67,10 +68,24 @@ class MockPeripheral : NSObject {
     }
     
     func writeValue(data: NSData, forCharacteristic characteristic: CBCharacteristic, type: CBCharacteristicWriteType) {
-        delegate?.peripheral(self, didUpdateValueForCharacteristic: characteristic, error: nil)
+        
+        // NEED TO WRITE TO THE CHARACTERISTIC'S VALUE HERE
+        
+        guard let mockChar = characteristic as? MockCharacteristic else {
+            print("Not MockCharacteristic")
+            return
+        }
+        
+        mockChar.mockValue = data
+        delegate?.peripheral(self, didUpdateValueForCharacteristic: mockChar, error: nil)
     }
     
+}
+
+extension MockPeripheral {
+
     // MARK: Heart Rare
+    
     func setHeartRateMode(mode: MockHeartRateMode) {
         switch mode {
         case .SteadyResting:
@@ -96,12 +111,9 @@ class MockPeripheral : NSObject {
             let characteristic = getHeartRateMeasurementCharacteristic()
             else { return }
         
+        updateHRCalled = true
         let data = heartRateToNSData(currentHeartRate)
         writeValue(data, forCharacteristic: characteristic, type: .WithoutResponse)
-    }
-    
-    enum MockHeartRateMode {
-        case SteadyResting
     }
     
     func heartRateToNSData(var hr: Int) -> NSData {
@@ -109,15 +121,6 @@ class MockPeripheral : NSObject {
         return data
     }
 
-}
-
-extension Array {
-
-    func randomItem() -> Element {
-        let index = Int(arc4random_uniform(UInt32(self.count)))
-        return self[index]
-    }
-    
 }
 
 extension MockPeripheral {

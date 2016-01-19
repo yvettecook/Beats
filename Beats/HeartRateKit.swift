@@ -42,7 +42,8 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
     }
     
     func heartRateUpdated(hr: Int) {
-        
+        print("Current HR: \(hr)")
+        currentHeartRate = hr
     }
 
 }

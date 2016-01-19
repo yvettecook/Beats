@@ -49,9 +49,39 @@ class MockPeripheralTests: XCTestCase {
         mockPeripheral.setNotifyValue(true, forCharacteristic: char!)
         XCTAssertTrue(mockPeripheral.notifyOnHRUpdate)
     }
+    
+    func testCanSetHeartRateMode() {
+        mockPeripheral.setHeartRateMode(.SteadyResting)
+        XCTAssertNotNil(mockPeripheral.availableHRs)
+    }
 
-    func testCanUpdateHeartRateValueForCharacteristic() {
+    func testCanStartPulse() {
+        let expectation = expectationWithDescription("Pulse should start")
         
+        let completion = { () -> Void in
+            XCTAssertTrue(self.mockPeripheral.updateHRCalled)
+            expectation.fulfill()
+        }
+        
+        mockPeripheral.setHeartRateMode(.SteadyResting)
+        asyncTest(completion, wait: 1)
+        
+        waitForExpectationsWithTimeout(1.5, handler: nil)
+    }
+    
+    func testIfNotifyOnHRSetWillUpdateDelegate() {
+        let expectation = expectationWithDescription("Delegate should be updated")
+        
+        let completion = { () -> Void in
+            let btc = self.mockPeripheral.delegate as! MockBluetoothController
+            XCTAssertTrue(btc.hrNotificationReceived)
+            expectation.fulfill()
+        }
+        
+        mockPeripheral.setHeartRateMode(.SteadyResting)
+        asyncTest(completion, wait: 1)
+        
+        waitForExpectationsWithTimeout(1.5, handler: nil)
     }
     
 }

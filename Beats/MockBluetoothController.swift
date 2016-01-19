@@ -63,13 +63,31 @@ class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentra
         
         guard let hrMeasurement = peripheral.getHeartRateMeasurementCharacteristic() else { return }
         peripheral.setNotifyValue(true, forCharacteristic: hrMeasurement)
+        startPulse(peripheral, mode: .SteadyResting)
     }
     
     func peripheral(peripheral: MockPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
         hrNotificationReceived = true
-        print("WOOOHHHHOOOOO")
+        guard
+            let mockChar = characteristic as? MockCharacteristic,
+            let data = mockChar.mockValue,
+            let hr = hrDataToInt(data)
+            else { return }
+        delegate?.heartRateUpdated(hr)
     }
     
+    
+    // MARK: Heart Rate
+    
+    func startPulse(peripheral: MockPeripheral, mode: MockHeartRateMode) {
+        peripheral.setHeartRateMode(mode)
+    }
+    
+    func hrDataToInt(data: NSData) -> Int? {
+        var bpm: Int = 0
+        data.getBytes(&bpm, length: sizeof(Int))
+        return bpm
+    }
     
     // MARK: Method called Flags
     
@@ -80,7 +98,6 @@ class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentra
     var hrNotificationReceived = false
     
 }
-
 
 
 

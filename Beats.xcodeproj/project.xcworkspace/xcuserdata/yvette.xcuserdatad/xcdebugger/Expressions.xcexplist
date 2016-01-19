@@ -3,18 +3,26 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "MockPeripheral.discoverServices([CBUUID]?) -&gt; ():MockPeripheral.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "heartRateService!">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "MockCentralManager.connectPeripheral(MockPeripheral, options : [String : AnyObject]?) -&gt; ():MockCentralManager.swift">
          <PersistentStrings>
             <PersistentString
                value = "delegate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MockBluetoothController.peripheral(MockPeripheral, didUpdateValueForCharacteristic : CBCharacteristic, error : NSError?) -&gt; ():MockBluetoothController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "characteristic.value">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MockPeripheral.discoverServices([CBUUID]?) -&gt; ():MockPeripheral.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "heartRateService!">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
