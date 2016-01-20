@@ -45,6 +45,9 @@
                                 <state key="normal" title="Demo Version" backgroundImage="curved_white_button">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="demoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Smk-Rq-X5R"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.52156862745098043" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
@@ -60,6 +63,10 @@
                             <constraint firstItem="poA-13-bKi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qxQ-TK-8Vl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="centralImage" destination="wez-86-5SH" id="GCh-vK-x2p"/>
+                        <outlet property="demoButton" destination="dXE-Nk-Hjb" id="I9w-Cj-r9d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

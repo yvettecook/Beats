@@ -27,6 +27,7 @@ class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentra
     }
     
     func scanForAvailableMonitors() {
+        print("Scanning for monitors 2")
         guard let centralManager = centralManager else { return }
         centralManager.scanForPeripheralsWithServices(nil, options: nil)
         state = .Scanning

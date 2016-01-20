@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "MockBluetoothController.state.didset:MockBluetoothController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "delegate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MockBluetoothController.peripheral(MockPeripheral, didUpdateValueForCharacteristic : CBCharacteristic, error : NSError?) -&gt; ():MockBluetoothController.swift">
          <PersistentStrings>
             <PersistentString

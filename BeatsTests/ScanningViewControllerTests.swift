@@ -46,4 +46,13 @@ class ScanningViewControllerTests: XCTestCase {
         scanningVC.heartRateKit?.state = .Connected
         XCTAssertEqual(self.scanningVC.state, UIState.Connected)
     }
+    
+    func testUpdatesUIOnStateChange() {
+        let initialImage = scanningVC.centralImage.image
+        XCTAssertEqual(initialImage, UIImage(named: "ellipses"))
+        scanningVC.setToDemoMode()
+        scanningVC.heartRateKit?.state = .Connected
+        let secondImage = scanningVC.centralImage.image
+        XCTAssertEqual(secondImage, UIImage(named: "tick"))
+    }
 }

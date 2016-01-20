@@ -29,6 +29,7 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
                 bluetoothController = nil
             case .Demo:
                 bluetoothController = MockBluetoothController()
+                bluetoothController?.delegate = self
             }
         }
     }
@@ -40,12 +41,14 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
     }
     
     func scanForMonitors() {
+        print("Scanning for monitors 1")
         bluetoothController!.scanForAvailableMonitors()
     }
     
     // MARK: BluetoothControllerDelegate
     
     func bluetooothControllerStateChanged(state: BluetoothControllerState) {
+        print("Bluetooth Controller State: \(state)")
         switch state {
         case .Scanning:
             self.state = .Scanning
