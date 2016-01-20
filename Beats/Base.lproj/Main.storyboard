@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Scanning View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Beats" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScanningViewController" id="BYZ-38-t0r" customClass="ScanningViewController" customModule="Beats" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +16,58 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poA-13-bKi">
+                                <rect key="frame" x="221" y="103" width="159" height="50"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="36"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for available monitors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9c-z9-tJg">
+                                <rect key="frame" x="221" y="156" width="159" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipses" translatesAutoresizingMaskIntoConstraints="NO" id="wez-86-5SH">
+                                <rect key="frame" x="263" y="256" width="75" height="87"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="GMi-15-g1W"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXE-Nk-Hjb">
+                                <rect key="frame" x="213" y="518" width="175" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="7kF-fE-eYV"/>
+                                    <constraint firstAttribute="width" constant="175" id="Te5-RV-tl5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Demo Version" backgroundImage="curved_white_button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.52156862745098043" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dXE-Nk-Hjb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ae6-1h-Spi"/>
+                            <constraint firstItem="wez-86-5SH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cr5-u2-YnD"/>
+                            <constraint firstItem="poA-13-bKi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="83" id="Ics-VB-3tu"/>
+                            <constraint firstItem="wez-86-5SH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KNC-Mi-Ulq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dXE-Nk-Hjb" secondAttribute="bottom" constant="31" id="Upf-Bh-xNl"/>
+                            <constraint firstItem="c9c-z9-tJg" firstAttribute="leading" secondItem="poA-13-bKi" secondAttribute="leading" id="aRn-Ua-UWs"/>
+                            <constraint firstItem="c9c-z9-tJg" firstAttribute="trailing" secondItem="poA-13-bKi" secondAttribute="trailing" id="c5v-PL-aoL"/>
+                            <constraint firstItem="c9c-z9-tJg" firstAttribute="top" secondItem="poA-13-bKi" secondAttribute="bottom" constant="3" id="hSQ-cH-kjm"/>
+                            <constraint firstItem="poA-13-bKi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qxQ-TK-8Vl"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="556" y="327"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="curved_white_button" width="743" height="134"/>
+        <image name="ellipses" width="473" height="87"/>
+    </resources>
 </document>

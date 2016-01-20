@@ -16,7 +16,7 @@ class HeartRateKitTests: XCTestCase {
     
     override func setUp() {
         heartRateKit = HeartRateKit()
-        heartRateKit.bluetoothController = MockBluetoothController()
+        heartRateKit.mode = .Demo
         heartRateKit.bluetoothController!.delegate = heartRateKit
         super.setUp()
     }
@@ -81,6 +81,15 @@ class HeartRateKitTests: XCTestCase {
         asyncTest(completionBlock, wait: 5)
         
         waitForExpectationsWithTimeout(5.5, handler: nil)
+    }
+    
+    func testCanBeSetToDemoMode() {
+        heartRateKit.mode = .Bluetooth
+        XCTAssertEqual(heartRateKit.mode, HeartRateKitMode.Bluetooth)
+        XCTAssertNil(heartRateKit.bluetoothController)
+        heartRateKit.mode = .Demo
+        let controller = heartRateKit.bluetoothController as? MockBluetoothController
+        XCTAssertNotNil(controller)
     }
 
 }

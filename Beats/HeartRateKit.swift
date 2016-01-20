@@ -10,15 +10,32 @@ import Foundation
 
 class HeartRateKit : NSObject, BluetoothControllerDelegate {
     
-    var state: HeartRateKitState
     var bluetoothController: BluetoothControllerProtocol?
+    var uiDelegate: HeartRateKitUIDelegate?
     
     var availableDeviceNames = [String]()
-    
     var currentHeartRate: Int?
+    
+    var state: HeartRateKitState {
+        didSet {
+            uiDelegate?.hrKitDidUpdateState(state)
+        }
+    }
+    
+    var mode: HeartRateKitMode {
+        didSet {
+            switch mode {
+            case .Bluetooth:
+                bluetoothController = nil
+            case .Demo:
+                bluetoothController = MockBluetoothController()
+            }
+        }
+    }
     
     override init() {
         state = .Inactive
+        mode = .Bluetooth
         super.init()
     }
     
@@ -46,6 +63,12 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
         currentHeartRate = hr
     }
 
+}
+
+
+enum HeartRateKitMode {
+    case Bluetooth
+    case Demo
 }
 
 enum HeartRateKitState {

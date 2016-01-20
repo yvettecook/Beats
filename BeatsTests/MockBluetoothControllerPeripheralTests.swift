@@ -57,8 +57,4 @@ class MockBluetoothControllerPeripheralTests: XCTestCase {
         waitForExpectationsWithTimeout(5.5, handler: nil)
     }
     
-    func testIfPeripheralHasNoHeartRateService() {
-        XCTFail()
-    }
-    
 }
