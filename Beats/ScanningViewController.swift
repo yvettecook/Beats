@@ -41,8 +41,8 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
     }
     
     func hrKitDidUpdateBPM(bpm: Int) {
-        print("Bpm: \(bpm)")
         self.transitionToNextView()
+        
     }
     
     func updateUI() {
@@ -59,7 +59,11 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
         centralImage.image = UIImage(named: "tick")
         demoButton.hidden = true
         titleLabel.text = "Connected"
-        subtitleLabel.text = "In demo mode"
+        if heartRateKit?.mode == .Demo {
+            subtitleLabel.text = "In demo mode"
+        } else {
+            subtitleLabel.text = ""
+        }
     }
     
     @IBAction func demoButtonTapped(sender: AnyObject) {

@@ -34,7 +34,7 @@ class BluetoothController: NSObject, BluetoothControllerProtocol, CBCentralManag
     
     func scanForAvailableMonitors() {
         guard let centralManager = centralManager else { return }
-        centralManager.scanForPeripheralsWithServices(nil, options: nil)
+        centralManager.scanForPeripheralsWithServices([], options: nil)
         state = .Scanning
     }
     
@@ -68,7 +68,6 @@ class BluetoothController: NSObject, BluetoothControllerProtocol, CBCentralManag
     }
     
     func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
-        state = .ConnectedMonitor
         peripheral.delegate = self
         peripheral.discoverServices([CBUUID(string: heartRateServiceUUID)])
     }
@@ -87,20 +86,24 @@ class BluetoothController: NSObject, BluetoothControllerProtocol, CBCentralManag
             print("Discovered service: \(service.UUID.UUIDString)")
             if service.UUID.UUIDString == heartRateServiceUUID {
                 peripheral.discoverCharacteristics(nil, forService:service)
+                state = .ConnectedMonitor
+                return
             }
         }
+        
+        centralManager?.cancelPeripheralConnection(peripheral)
     }
     
     func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
         if service.UUID.UUIDString == heartRateServiceUUID {
-            
-            self.centralManager?.stopScan()
-            
+        
             for char in service.characteristics! {
                 if char.UUID.UUIDString == measurementCharacteristicUUID {
+                    self.centralManager?.stopScan()
                     peripheral.setNotifyValue(true, forCharacteristic: char)
                 }
             }
+            
         } else {
             centralManager?.cancelPeripheralConnection(peripheral)
         }
