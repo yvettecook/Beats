@@ -27,8 +27,11 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
     var mode: HeartRateKitMode {
         didSet {
             switch mode {
+            case .Inactive:
+                break
             case .Bluetooth:
-                bluetoothController = nil
+                bluetoothController = BluetoothController()
+                bluetoothController?.delegate = self
             case .Demo:
                 bluetoothController = MockBluetoothController()
                 bluetoothController?.delegate = self
@@ -38,7 +41,7 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
     
     private override init() {
         state = .Inactive
-        mode = .Bluetooth
+        mode = .Inactive
         super.init()
     }
     
@@ -70,6 +73,7 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
 
 
 enum HeartRateKitMode {
+    case Inactive
     case Bluetooth
     case Demo
 }

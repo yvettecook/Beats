@@ -22,6 +22,7 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
         state = .Searching
         heartRateKit = HeartRateKit.sharedInstance
         heartRateKit?.uiDelegate = self
+        heartRateKit?.mode = .Bluetooth
     }
     
     func setToDemoMode() {
@@ -40,7 +41,6 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
     }
     
     func hrKitDidUpdateBPM(bpm: Int) {
-        print("BPM: \(bpm)")
     }
     
     func updateUI() {

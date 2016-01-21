@@ -77,7 +77,7 @@ class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentra
     }
     
     
-    // MARK: Heart Rate
+    // MARK: Mock Heart Rate
     
     func startPulse(peripheral: MockPeripheral, mode: MockHeartRateMode) {
         peripheral.setHeartRateMode(mode)

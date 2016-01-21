@@ -14,6 +14,7 @@
 		1A2D10B81C4FB8AC0076F7E4 /* HeartRateKitUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D10B71C4FB8AC0076F7E4 /* HeartRateKitUIDelegate.swift */; };
 		1A2D10BA1C5012050076F7E4 /* HeartRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D10B91C5012050076F7E4 /* HeartRateViewController.swift */; };
 		1A2D10BC1C50FFFF0076F7E4 /* HeartRateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D10BB1C50FFFF0076F7E4 /* HeartRateViewControllerTests.swift */; };
+		1A6EC44B1C512DFF00A042EA /* BluetoothController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6EC44A1C512DFF00A042EA /* BluetoothController.swift */; };
 		1A8F45851C443382002B45B7 /* MockPeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */; };
 		1AA255641C40246300A7DAE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255631C40246300A7DAE5 /* AppDelegate.swift */; };
 		1AA255691C40246300A7DAE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA255671C40246300A7DAE5 /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		1A2D10B71C4FB8AC0076F7E4 /* HeartRateKitUIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateKitUIDelegate.swift; sourceTree = "<group>"; };
 		1A2D10B91C5012050076F7E4 /* HeartRateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateViewController.swift; sourceTree = "<group>"; };
 		1A2D10BB1C50FFFF0076F7E4 /* HeartRateViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateViewControllerTests.swift; sourceTree = "<group>"; };
+		1A6EC44A1C512DFF00A042EA /* BluetoothController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothController.swift; sourceTree = "<group>"; };
 		1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheralTests.swift; sourceTree = "<group>"; };
 		1AA255601C40246300A7DAE5 /* Beats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA255631C40246300A7DAE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,9 +121,7 @@
 			children = (
 				1AA255931C4024F900A7DAE5 /* HeartRateKit.swift */,
 				1A2D10B71C4FB8AC0076F7E4 /* HeartRateKitUIDelegate.swift */,
-				1AA255951C40269D00A7DAE5 /* BluetoothControllerProtocol.swift */,
-				1AA255971C40270B00A7DAE5 /* MockBluetoothController.swift */,
-				1AA255A31C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift */,
+				1A6EC44C1C512E0900A042EA /* BluetoothController */,
 				1AA2559B1C4029CC00A7DAE5 /* MockCentralManager.swift */,
 				1AA255A51C42F19700A7DAE5 /* MockCentralManagerDelegate.swift */,
 				1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */,
@@ -176,6 +176,17 @@
 				1AA255671C40246300A7DAE5 /* Main.storyboard */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		1A6EC44C1C512E0900A042EA /* BluetoothController */ = {
+			isa = PBXGroup;
+			children = (
+				1AA255951C40269D00A7DAE5 /* BluetoothControllerProtocol.swift */,
+				1A6EC44A1C512DFF00A042EA /* BluetoothController.swift */,
+				1AA255971C40270B00A7DAE5 /* MockBluetoothController.swift */,
+				1AA255A31C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift */,
+			);
+			name = BluetoothController;
 			sourceTree = "<group>";
 		};
 		1AA255571C40246300A7DAE5 = {
@@ -386,6 +397,7 @@
 				1AA255641C40246300A7DAE5 /* AppDelegate.swift in Sources */,
 				1AA2559C1C4029CC00A7DAE5 /* MockCentralManager.swift in Sources */,
 				1AE2DD401C4E57C500FB395E /* ArrayExtension.swift in Sources */,
+				1A6EC44B1C512DFF00A042EA /* BluetoothController.swift in Sources */,
 				1A2D10B51C4F99070076F7E4 /* ScanningViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
