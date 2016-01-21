@@ -20,7 +20,7 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
     
     override func viewDidLoad() {
         state = .Searching
-        heartRateKit = HeartRateKit()
+        heartRateKit = HeartRateKit.sharedInstance
         heartRateKit?.uiDelegate = self
     }
     
@@ -30,7 +30,6 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
     }
     
     func hrKitDidUpdateState(state: HeartRateKitState) {
-        print("State: \(state)")
         switch state {
         case .Connected:
             self.state = .Connected
@@ -38,6 +37,10 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
         default:
             break
         }
+    }
+    
+    func hrKitDidUpdateBPM(bpm: Int) {
+        print("BPM: \(bpm)")
     }
     
     func updateUI() {

@@ -21,7 +21,7 @@ class ScanningViewControllerTests: XCTestCase {
         scanningVC = storyboard.instantiateViewControllerWithIdentifier("ScanningViewController") as! ScanningViewController
         UIApplication.sharedApplication().keyWindow!.rootViewController = scanningVC
         
-        let _ = scanningVC.view
+        XCTAssertNotNil(scanningVC.view)
     }
     
     override func tearDown() {
@@ -71,4 +71,5 @@ class ScanningViewControllerTests: XCTestCase {
         
         waitForExpectationsWithTimeout(5.5, handler: nil)
     }
+    
 }

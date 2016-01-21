@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="700" y="332"/>
         </scene>
-        <!--View Controller-->
+        <!--Heart Rate View Controller-->
         <scene sceneID="wAI-0T-ojl">
             <objects>
-                <viewController id="QNe-bS-4yC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HeartRateViewController" id="QNe-bS-4yC" customClass="HeartRateViewController" customModule="Beats" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8p8-vA-4jy"/>
                         <viewControllerLayoutGuide type="bottom" id="DS9-8q-vIl"/>
@@ -86,8 +86,42 @@
                     <view key="view" contentMode="scaleToFill" id="xee-Eb-GbI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPG-q2-XCl">
+                                <rect key="frame" x="191" y="228" width="218" height="144"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E1-9a-HbF">
+                                        <rect key="frame" x="184" y="25" width="34" height="22"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bil-nw-S7c">
+                                        <rect key="frame" x="0.0" y="0.0" width="176" height="144"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="105"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7E1-9a-HbF" firstAttribute="top" secondItem="bil-nw-S7c" secondAttribute="top" constant="25" id="9iy-Cd-jSh"/>
+                                    <constraint firstAttribute="trailing" secondItem="7E1-9a-HbF" secondAttribute="trailing" id="F29-ZA-Gef"/>
+                                    <constraint firstItem="7E1-9a-HbF" firstAttribute="leading" secondItem="bil-nw-S7c" secondAttribute="trailing" constant="8" id="SI7-yB-s7g"/>
+                                    <constraint firstAttribute="bottom" secondItem="bil-nw-S7c" secondAttribute="bottom" id="cLe-mz-zLv"/>
+                                    <constraint firstItem="bil-nw-S7c" firstAttribute="leading" secondItem="hPG-q2-XCl" secondAttribute="leading" id="fCq-KX-VAC"/>
+                                    <constraint firstItem="bil-nw-S7c" firstAttribute="top" secondItem="hPG-q2-XCl" secondAttribute="top" id="hC1-Ki-Aos"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2627450980392157" green="0.6705882352941176" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hPG-q2-XCl" firstAttribute="centerX" secondItem="xee-Eb-GbI" secondAttribute="centerX" id="0GD-aG-aqC"/>
+                            <constraint firstItem="hPG-q2-XCl" firstAttribute="centerY" secondItem="xee-Eb-GbI" secondAttribute="centerY" id="SA3-mG-R6B"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bpmLabel" destination="bil-nw-S7c" id="dPK-n5-gQM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOp-w5-61G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

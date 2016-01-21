@@ -13,6 +13,7 @@
 		1A2D10B51C4F99070076F7E4 /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D10B41C4F99070076F7E4 /* ScanningViewController.swift */; };
 		1A2D10B81C4FB8AC0076F7E4 /* HeartRateKitUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D10B71C4FB8AC0076F7E4 /* HeartRateKitUIDelegate.swift */; };
 		1A2D10BA1C5012050076F7E4 /* HeartRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D10B91C5012050076F7E4 /* HeartRateViewController.swift */; };
+		1A2D10BC1C50FFFF0076F7E4 /* HeartRateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D10BB1C50FFFF0076F7E4 /* HeartRateViewControllerTests.swift */; };
 		1A8F45851C443382002B45B7 /* MockPeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */; };
 		1AA255641C40246300A7DAE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255631C40246300A7DAE5 /* AppDelegate.swift */; };
 		1AA255691C40246300A7DAE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA255671C40246300A7DAE5 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		1A2D10B41C4F99070076F7E4 /* ScanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
 		1A2D10B71C4FB8AC0076F7E4 /* HeartRateKitUIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateKitUIDelegate.swift; sourceTree = "<group>"; };
 		1A2D10B91C5012050076F7E4 /* HeartRateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateViewController.swift; sourceTree = "<group>"; };
+		1A2D10BB1C50FFFF0076F7E4 /* HeartRateViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateViewControllerTests.swift; sourceTree = "<group>"; };
 		1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheralTests.swift; sourceTree = "<group>"; };
 		1AA255601C40246300A7DAE5 /* Beats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA255631C40246300A7DAE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				1A2D10AF1C4EBABC0076F7E4 /* ScanningViewControllerTests.swift */,
+				1A2D10BB1C50FFFF0076F7E4 /* HeartRateViewControllerTests.swift */,
 			);
 			name = "ViewController Tests";
 			sourceTree = "<group>";
@@ -165,6 +168,14 @@
 				1A2D10B91C5012050076F7E4 /* HeartRateViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1A2D10BF1C510F4C0076F7E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AA255671C40246300A7DAE5 /* Main.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		1AA255571C40246300A7DAE5 = {
@@ -191,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				1AA255631C40246300A7DAE5 /* AppDelegate.swift */,
-				1AA255671C40246300A7DAE5 /* Main.storyboard */,
+				1A2D10BF1C510F4C0076F7E4 /* Views */,
 				1A2D10B61C4F990C0076F7E4 /* ViewControllers */,
 				1A2D10AC1C4E95090076F7E4 /* HeartRateKit */,
 				1AE2DD411C4E57C900FB395E /* Helpers */,
@@ -386,6 +397,7 @@
 				1AE2DD361C4BDBFD00FB395E /* MockBluetoothControllerPeripheralTests.swift in Sources */,
 				1AA2559E1C42E6E600A7DAE5 /* MockCentralManagerTests.swift in Sources */,
 				1AE2DD321C4BBE9200FB395E /* TestHelpers.swift in Sources */,
+				1A2D10BC1C50FFFF0076F7E4 /* HeartRateViewControllerTests.swift in Sources */,
 				1AE2DD341C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift in Sources */,
 				1A8F45851C443382002B45B7 /* MockPeripheralTests.swift in Sources */,
 				1A2D10B01C4EBABC0076F7E4 /* ScanningViewControllerTests.swift in Sources */,

@@ -10,6 +10,8 @@ import Foundation
 
 class HeartRateKit : NSObject, BluetoothControllerDelegate {
     
+    static let sharedInstance = HeartRateKit()
+    
     var bluetoothController: BluetoothControllerProtocol?
     var uiDelegate: HeartRateKitUIDelegate?
     
@@ -34,21 +36,19 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
         }
     }
     
-    override init() {
+    private override init() {
         state = .Inactive
         mode = .Bluetooth
         super.init()
     }
     
     func scanForMonitors() {
-        print("Scanning for monitors 1")
         bluetoothController!.scanForAvailableMonitors()
     }
     
     // MARK: BluetoothControllerDelegate
     
     func bluetooothControllerStateChanged(state: BluetoothControllerState) {
-        print("Bluetooth Controller State: \(state)")
         switch state {
         case .Scanning:
             self.state = .Scanning
@@ -62,8 +62,8 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
     }
     
     func heartRateUpdated(hr: Int) {
-        print("Current HR: \(hr)")
         currentHeartRate = hr
+        uiDelegate?.hrKitDidUpdateBPM(hr)
     }
 
 }

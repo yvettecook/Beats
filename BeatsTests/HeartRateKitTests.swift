@@ -15,7 +15,7 @@ class HeartRateKitTests: XCTestCase {
     var heartRateKit: HeartRateKit!
     
     override func setUp() {
-        heartRateKit = HeartRateKit()
+        heartRateKit = HeartRateKit.sharedInstance
         heartRateKit.mode = .Demo
         heartRateKit.bluetoothController!.delegate = heartRateKit
         super.setUp()

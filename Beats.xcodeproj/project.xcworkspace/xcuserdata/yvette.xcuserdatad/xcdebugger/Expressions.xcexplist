@@ -42,5 +42,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "HeartRateViewControllerTests.(testHeartRateViewDisplayCurrentHR(HeartRateViewControllerTests) -&gt; () -&gt; ()).(closure #1):HeartRateViewControllerTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.heartRateVC.heartRateKit">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
