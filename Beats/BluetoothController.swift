@@ -81,6 +81,8 @@ class BluetoothController: NSObject, BluetoothControllerProtocol, CBCentralManag
     // MARK: MockPeripheralDelegate
     
     func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
+        print("Peripheral: \(peripheral.name)")
+        
         for service in peripheral.services! {
             print("Discovered service: \(service.UUID.UUIDString)")
             if service.UUID.UUIDString == heartRateServiceUUID {
@@ -99,6 +101,8 @@ class BluetoothController: NSObject, BluetoothControllerProtocol, CBCentralManag
                     peripheral.setNotifyValue(true, forCharacteristic: char)
                 }
             }
+        } else {
+            centralManager?.cancelPeripheralConnection(peripheral)
         }
     }
     

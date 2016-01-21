@@ -41,6 +41,8 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
     }
     
     func hrKitDidUpdateBPM(bpm: Int) {
+        print("Bpm: \(bpm)")
+        self.transitionToNextView()
     }
     
     func updateUI() {
@@ -49,7 +51,6 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
             break
         case .Connected:
             connectedUI()
-            transitionToNextView()
         }
     }
     

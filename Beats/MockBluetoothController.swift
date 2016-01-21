@@ -99,11 +99,3 @@ class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentra
     
 }
 
-
-
-enum BluetoothControllerState {
-    case StartedUp
-    case Scanning
-    case FoundMonitor
-    case ConnectedMonitor
-}
