@@ -23,7 +23,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for available monitors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9c-z9-tJg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for available monitors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9c-z9-tJg">
                                 <rect key="frame" x="221" y="156" width="159" height="22"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,11 +66,32 @@
                     <connections>
                         <outlet property="centralImage" destination="wez-86-5SH" id="GCh-vK-x2p"/>
                         <outlet property="demoButton" destination="dXE-Nk-Hjb" id="I9w-Cj-r9d"/>
+                        <outlet property="subtitleLabel" destination="c9c-z9-tJg" id="Z9d-cE-sdk"/>
+                        <outlet property="titleLabel" destination="poA-13-bKi" id="Y3a-Du-FgJ"/>
+                        <segue destination="QNe-bS-4yC" kind="show" identifier="SegueToHeartRate" id="1PF-6a-cPu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="556" y="327"/>
+            <point key="canvasLocation" x="700" y="332"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wAI-0T-ojl">
+            <objects>
+                <viewController id="QNe-bS-4yC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8p8-vA-4jy"/>
+                        <viewControllerLayoutGuide type="bottom" id="DS9-8q-vIl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xee-Eb-GbI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IOp-w5-61G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1498" y="332"/>
         </scene>
     </scenes>
     <resources>

@@ -12,6 +12,7 @@
 		1A2D10B31C4F92680076F7E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D10B21C4F92680076F7E4 /* Assets.xcassets */; };
 		1A2D10B51C4F99070076F7E4 /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D10B41C4F99070076F7E4 /* ScanningViewController.swift */; };
 		1A2D10B81C4FB8AC0076F7E4 /* HeartRateKitUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D10B71C4FB8AC0076F7E4 /* HeartRateKitUIDelegate.swift */; };
+		1A2D10BA1C5012050076F7E4 /* HeartRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D10B91C5012050076F7E4 /* HeartRateViewController.swift */; };
 		1A8F45851C443382002B45B7 /* MockPeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */; };
 		1AA255641C40246300A7DAE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255631C40246300A7DAE5 /* AppDelegate.swift */; };
 		1AA255691C40246300A7DAE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA255671C40246300A7DAE5 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		1A2D10B21C4F92680076F7E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A2D10B41C4F99070076F7E4 /* ScanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
 		1A2D10B71C4FB8AC0076F7E4 /* HeartRateKitUIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateKitUIDelegate.swift; sourceTree = "<group>"; };
+		1A2D10B91C5012050076F7E4 /* HeartRateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateViewController.swift; sourceTree = "<group>"; };
 		1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheralTests.swift; sourceTree = "<group>"; };
 		1AA255601C40246300A7DAE5 /* Beats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA255631C40246300A7DAE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				1A2D10B41C4F99070076F7E4 /* ScanningViewController.swift */,
+				1A2D10B91C5012050076F7E4 /* HeartRateViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2D10BA1C5012050076F7E4 /* HeartRateViewController.swift in Sources */,
 				1A2D10B81C4FB8AC0076F7E4 /* HeartRateKitUIDelegate.swift in Sources */,
 				1A2D10AB1C4E691B0076F7E4 /* MockCharacteristic.swift in Sources */,
 				1AA255A61C42F19700A7DAE5 /* MockCentralManagerDelegate.swift in Sources */,

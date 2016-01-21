@@ -55,4 +55,20 @@ class ScanningViewControllerTests: XCTestCase {
         let secondImage = scanningVC.centralImage.image
         XCTAssertEqual(secondImage, UIImage(named: "tick"))
     }
+    
+    func testLeavesScanningScreenAfterConnected() {
+        let expectation = expectationWithDescription("Should leave screen on connection")
+        
+        let completion = { () -> Void in
+            XCTAssertTrue(self.scanningVC.segueToHeartRateTriggered)
+            expectation.fulfill()
+        }
+        
+        scanningVC.setToDemoMode()
+        scanningVC.heartRateKit?.state = .Connected
+        
+        asyncTest(completion, wait: 5)
+        
+        waitForExpectationsWithTimeout(5.5, handler: nil)
+    }
 }

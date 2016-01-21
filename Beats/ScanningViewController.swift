@@ -13,6 +13,8 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
     var state: UIState?
     var heartRateKit: HeartRateKit?
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var centralImage: UIImageView!
     @IBOutlet weak var demoButton: UIButton!
     
@@ -43,14 +45,35 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
         case .Searching:
             break
         case .Connected:
-            view.backgroundColor = UIColor(red: 74/255, green: 198/255, blue: 183/255, alpha: 1)
-            centralImage.image = UIImage(named: "tick")
+            connectedUI()
+            transitionToNextView()
         }
+    }
+    
+    func connectedUI() {
+        view.backgroundColor = UIColor(red: 74/255, green: 198/255, blue: 183/255, alpha: 1)
+        centralImage.image = UIImage(named: "tick")
+        demoButton.hidden = true
+        titleLabel.text = "Connected"
+        subtitleLabel.text = "In demo mode"
     }
     
     @IBAction func demoButtonTapped(sender: AnyObject) {
         setToDemoMode()
     }
+    
+    func transitionToNextView() {
+        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 2 * Int64(NSEC_PER_SEC))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            self.performSegueWithIdentifier("SegueToHeartRate", sender: self)
+            self.segueToHeartRateTriggered = true
+        }
+    }
+    
+    
+    // MARK: Testing flags
+    
+    var segueToHeartRateTriggered = false
 }
 
 enum UIState {
