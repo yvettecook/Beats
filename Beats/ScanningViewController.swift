@@ -18,6 +18,8 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
     @IBOutlet weak var centralImage: UIImageView!
     @IBOutlet weak var demoButton: UIButton!
     
+    
+    
     override func viewDidLoad() {
         state = .Searching
         heartRateKit = HeartRateKit.sharedInstance
