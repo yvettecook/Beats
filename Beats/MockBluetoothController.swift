@@ -8,7 +8,7 @@
 
 import CoreBluetooth
 
-class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentralManagerDelegate, MockPeripheralDelegate {
+final class MockBluetoothController: NSObject, BluetoothControllerProtocol, MockCentralManagerDelegate, MockPeripheralDelegate {
     
     var state: BluetoothControllerState {
         didSet {

@@ -8,7 +8,7 @@
 
 import CoreBluetooth
 
-class MockCharacteristic: CBMutableCharacteristic {
+final class MockCharacteristic: CBMutableCharacteristic {
     
     var trueCharacteristic: CBMutableCharacteristic?
     var mockValue: NSData?

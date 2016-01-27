@@ -8,7 +8,7 @@
 
 import Foundation
 
-class HeartRateKit : NSObject, BluetoothControllerDelegate {
+final class HeartRateKit : NSObject, BluetoothControllerDelegate {
     
     static let sharedInstance = HeartRateKit()
     

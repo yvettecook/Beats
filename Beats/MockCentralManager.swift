@@ -9,7 +9,7 @@
 import Foundation
 import CoreBluetooth
 
-class MockCentralManager: NSObject {
+final class MockCentralManager: NSObject {
     
     var delegate: MockCentralManagerDelegate?
     

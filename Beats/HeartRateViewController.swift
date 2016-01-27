@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeartRateViewController: UIViewController, HeartRateKitUIDelegate {
+final class HeartRateViewController: UIViewController, HeartRateKitUIDelegate {
     
     var heartRateKit: HeartRateKit?
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
+final class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
     
     var state: UIState?
     var heartRateKit: HeartRateKit?

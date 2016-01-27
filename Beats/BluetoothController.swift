@@ -8,7 +8,7 @@
 
 import CoreBluetooth
 
-class BluetoothController: NSObject, BluetoothControllerProtocol, CBCentralManagerDelegate, CBPeripheralDelegate {
+final class BluetoothController: NSObject, BluetoothControllerProtocol, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     var state: BluetoothControllerState {
         didSet {

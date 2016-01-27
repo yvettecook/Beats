@@ -8,7 +8,7 @@
 
 import CoreBluetooth
 
-class MockPeripheral : NSObject {
+final class MockPeripheral : NSObject {
     
     var delegate: MockPeripheralDelegate?
     
