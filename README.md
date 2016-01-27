@@ -17,7 +17,7 @@ Currently tested and compatible with:
 
 One of the biggest technical challenges so far has been creating a mock version of the Core Bluetooth API, made particularly difficult as key objects have no public initializers.
 
-Designed using Sketch
+Designed using Sketch.
 
 ### To Do
 For full development roadmap, head over to the project board [Trello](https://trello.com/b/PrwzpYqY/beats).

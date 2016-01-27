@@ -323,6 +323,7 @@
 				TargetAttributes = {
 					1AA2555F1C40246300A7DAE5 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = EYC5Q3DCC6;
 					};
 					1AA255731C40246300A7DAE5 = {
 						CreatedOnToolsVersion = 7.2;
@@ -551,6 +552,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Beats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Yvette.Beats;
@@ -562,6 +564,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Beats/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Yvette.Beats;

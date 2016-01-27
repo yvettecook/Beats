@@ -86,7 +86,6 @@ class HeartRateKitTests: XCTestCase {
     func testCanBeSetToDemoMode() {
         heartRateKit.mode = .Bluetooth
         XCTAssertEqual(heartRateKit.mode, HeartRateKitMode.Bluetooth)
-        XCTAssertNil(heartRateKit.bluetoothController)
         heartRateKit.mode = .Demo
         let controller = heartRateKit.bluetoothController as? MockBluetoothController
         XCTAssertNotNil(controller)
