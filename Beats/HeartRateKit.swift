@@ -49,6 +49,8 @@ class HeartRateKit : NSObject, BluetoothControllerDelegate {
         bluetoothController!.scanForAvailableMonitors()
     }
     
+    
+    
     // MARK: BluetoothControllerDelegate
     
     func bluetooothControllerStateChanged(state: BluetoothControllerState) {

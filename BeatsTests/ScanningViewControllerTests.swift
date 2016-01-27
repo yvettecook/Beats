@@ -72,4 +72,22 @@ class ScanningViewControllerTests: XCTestCase {
         waitForExpectationsWithTimeout(5.5, handler: nil)
     }
     
+    func testOnlyTransitionsToNextViewOnce() {
+        let expectation = expectationWithDescription("Should only transition once")
+        
+        let completion = { () -> Void in
+            let count = self.scanningVC.segueCount
+            print("Count: \(count)")
+            XCTAssertTrue(count == 1)
+            expectation.fulfill()
+        }
+        
+        scanningVC.setToDemoMode()
+        scanningVC.heartRateKit?.state = .Connected
+        
+        asyncTest(completion, wait: 5)
+        
+        waitForExpectationsWithTimeout(5.5, handler: nil)
+    }
+    
 }

@@ -43,7 +43,7 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
     }
     
     func hrKitDidUpdateBPM(bpm: Int) {
-        self.transitionToNextView()
+        if !segueToHeartRateTriggered { self.transitionToNextView() }
         
     }
     
@@ -73,10 +73,12 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
     }
     
     func transitionToNextView() {
+        segueCount++
+        self.segueToHeartRateTriggered = true
+        
         let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 2 * Int64(NSEC_PER_SEC))
         dispatch_after(time, dispatch_get_main_queue()) {
             self.performSegueWithIdentifier("SegueToHeartRate", sender: self)
-            self.segueToHeartRateTriggered = true
         }
     }
     
@@ -84,6 +86,7 @@ class ScanningViewController : UIViewController, HeartRateKitUIDelegate {
     // MARK: Testing flags
     
     var segueToHeartRateTriggered = false
+    var segueCount = 0
 }
 
 enum UIState {

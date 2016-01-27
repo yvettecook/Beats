@@ -90,5 +90,5 @@ class HeartRateKitTests: XCTestCase {
         let controller = heartRateKit.bluetoothController as? MockBluetoothController
         XCTAssertNotNil(controller)
     }
-
+    
 }
