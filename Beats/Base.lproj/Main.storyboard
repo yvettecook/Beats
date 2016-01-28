@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Scanning View Controller-->
@@ -112,11 +113,23 @@
                                     <constraint firstItem="bil-nw-S7c" firstAttribute="top" secondItem="hPG-q2-XCl" secondAttribute="top" id="hC1-Ki-Aos"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rou-DV-zZp">
+                                <rect key="frame" x="190" y="484" width="220" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="912-pU-aZq"/>
+                                    <constraint firstAttribute="width" constant="220" id="FsP-vi-tbr"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="PVG-pd-Wsp" kind="embed" id="vqJ-aU-SzF"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.2627450980392157" green="0.6705882352941176" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hPG-q2-XCl" firstAttribute="centerX" secondItem="xee-Eb-GbI" secondAttribute="centerX" id="0GD-aG-aqC"/>
                             <constraint firstItem="hPG-q2-XCl" firstAttribute="centerY" secondItem="xee-Eb-GbI" secondAttribute="centerY" id="SA3-mG-R6B"/>
+                            <constraint firstItem="rou-DV-zZp" firstAttribute="centerX" secondItem="xee-Eb-GbI" secondAttribute="centerX" id="Yhb-ZQ-c7I"/>
+                            <constraint firstItem="DS9-8q-vIl" firstAttribute="top" secondItem="rou-DV-zZp" secondAttribute="bottom" constant="20" id="uXp-FM-pc7"/>
                         </constraints>
                     </view>
                     <connections>
@@ -127,9 +140,48 @@
             </objects>
             <point key="canvasLocation" x="1498" y="332"/>
         </scene>
+        <!--Recording Controls View Controller-->
+        <scene sceneID="Xiu-TQ-tUf">
+            <objects>
+                <viewController storyboardIdentifier="RecordingControlsViewController" id="PVG-pd-Wsp" customClass="RecordingControlsViewController" customModule="Beats" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ey-r3-7Mc">
+                        <rect key="frame" x="0.0" y="0.0" width="220" height="96"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCD-CW-j11">
+                                <rect key="frame" x="16" y="0.0" width="188" height="96"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naS-xe-frC">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="96"/>
+                                        <state key="normal" image="record_button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9x-rc-3BK">
+                                        <rect key="frame" x="94" y="0.0" width="94" height="96"/>
+                                        <state key="normal" image="stop_button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="h9x-rc-3BK" firstAttribute="width" secondItem="naS-xe-frC" secondAttribute="width" id="Lw9-ag-qVM"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="fCD-CW-j11" secondAttribute="trailing" id="Tb7-e3-IQi"/>
+                            <constraint firstItem="fCD-CW-j11" firstAttribute="leading" secondItem="5ey-r3-7Mc" secondAttribute="leadingMargin" id="YNL-Bo-WjT"/>
+                            <constraint firstItem="fCD-CW-j11" firstAttribute="top" secondItem="5ey-r3-7Mc" secondAttribute="topMargin" id="ZbS-c7-sPm"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="fCD-CW-j11" secondAttribute="bottom" id="lDl-ge-Sx4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1eb-Wg-P73" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2117" y="568"/>
+        </scene>
     </scenes>
     <resources>
         <image name="curved_white_button" width="743" height="134"/>
         <image name="ellipses" width="473" height="87"/>
+        <image name="record_button" width="77" height="77"/>
+        <image name="stop_button" width="77" height="77"/>
     </resources>
 </document>

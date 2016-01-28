@@ -52,8 +52,5 @@ class HeartRateViewControllerTests: XCTestCase {
         
         waitForExpectationsWithTimeout(5.5, handler: nil)
     }
-    
-    
-    
 
 }

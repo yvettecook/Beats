@@ -28,6 +28,8 @@
 		1AA2559E1C42E6E600A7DAE5 /* MockCentralManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA2559D1C42E6E600A7DAE5 /* MockCentralManagerTests.swift */; };
 		1AA255A41C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255A31C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift */; };
 		1AA255A61C42F19700A7DAE5 /* MockCentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255A51C42F19700A7DAE5 /* MockCentralManagerDelegate.swift */; };
+		1AA5BD991C5A3B4200F0369B /* RecordingControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5BD981C5A3B4200F0369B /* RecordingControlsViewController.swift */; };
+		1AA5BD9B1C5A403700F0369B /* RecordingControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5BD9A1C5A403700F0369B /* RecordingControlsViewController.swift */; };
 		1AB1B5DA1C43CD3100AF8A6D /* MockPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */; };
 		1AE2DD301C4936FD00FB395E /* UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD2F1C4936FD00FB395E /* UITest.swift */; };
 		1AE2DD321C4BBE9200FB395E /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD311C4BBE9200FB395E /* TestHelpers.swift */; };
@@ -83,6 +85,8 @@
 		1AA2559D1C42E6E600A7DAE5 /* MockCentralManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCentralManagerTests.swift; sourceTree = "<group>"; };
 		1AA255A31C42F0C500A7DAE5 /* BluetoothControllerDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothControllerDelegateProtocol.swift; sourceTree = "<group>"; };
 		1AA255A51C42F19700A7DAE5 /* MockCentralManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCentralManagerDelegate.swift; sourceTree = "<group>"; };
+		1AA5BD981C5A3B4200F0369B /* RecordingControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingControlsViewController.swift; sourceTree = "<group>"; };
+		1AA5BD9A1C5A403700F0369B /* RecordingControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingControlsViewController.swift; sourceTree = "<group>"; };
 		1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheral.swift; sourceTree = "<group>"; };
 		1AE2DD2F1C4936FD00FB395E /* UITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITest.swift; sourceTree = "<group>"; };
 		1AE2DD311C4BBE9200FB395E /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			children = (
 				1A2D10AF1C4EBABC0076F7E4 /* ScanningViewControllerTests.swift */,
 				1A2D10BB1C50FFFF0076F7E4 /* HeartRateViewControllerTests.swift */,
+				1AA5BD9A1C5A403700F0369B /* RecordingControlsViewController.swift */,
 			);
 			name = "ViewController Tests";
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			children = (
 				1A2D10B41C4F99070076F7E4 /* ScanningViewController.swift */,
 				1A2D10B91C5012050076F7E4 /* HeartRateViewController.swift */,
+				1AA5BD981C5A3B4200F0369B /* RecordingControlsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA5BD991C5A3B4200F0369B /* RecordingControlsViewController.swift in Sources */,
 				1A2D10BA1C5012050076F7E4 /* HeartRateViewController.swift in Sources */,
 				1A2D10B81C4FB8AC0076F7E4 /* HeartRateKitUIDelegate.swift in Sources */,
 				1A2D10AB1C4E691B0076F7E4 /* MockCharacteristic.swift in Sources */,
@@ -411,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA5BD9B1C5A403700F0369B /* RecordingControlsViewController.swift in Sources */,
 				1AE2DD361C4BDBFD00FB395E /* MockBluetoothControllerPeripheralTests.swift in Sources */,
 				1AA2559E1C42E6E600A7DAE5 /* MockCentralManagerTests.swift in Sources */,
 				1AE2DD321C4BBE9200FB395E /* TestHelpers.swift in Sources */,
