@@ -28,8 +28,4 @@ class RecordingControlsViewControllerTests : XCTestCase {
         super.tearDown()
     }
     
-    func testHasHeartRateKit() {
-        XCTAssertNotNil(recordingControlsVC.heartRateKit)
-    }
-    
 }

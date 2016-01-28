@@ -9,11 +9,8 @@
 import UIKit
 
 final class RecordingControlsViewController: UIViewController {
-    
-    var heartRateKit: HeartRateKit?
-    
+        
     override func viewDidLoad() {
-        heartRateKit = HeartRateKit.sharedInstance
     }
     
     
