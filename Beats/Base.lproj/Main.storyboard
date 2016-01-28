@@ -114,10 +114,10 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rou-DV-zZp">
-                                <rect key="frame" x="190" y="484" width="220" height="96"/>
+                                <rect key="frame" x="190" y="484" width="221" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="912-pU-aZq"/>
-                                    <constraint firstAttribute="width" constant="220" id="FsP-vi-tbr"/>
+                                    <constraint firstAttribute="width" constant="221" id="FsP-vi-tbr"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="PVG-pd-Wsp" kind="embed" id="vqJ-aU-SzF"/>
@@ -145,33 +145,46 @@
             <objects>
                 <viewController storyboardIdentifier="RecordingControlsViewController" id="PVG-pd-Wsp" customClass="RecordingControlsViewController" customModule="Beats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5ey-r3-7Mc">
-                        <rect key="frame" x="0.0" y="0.0" width="220" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="221" height="96"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCD-CW-j11">
-                                <rect key="frame" x="16" y="0.0" width="188" height="96"/>
+                                <rect key="frame" x="0.0" y="0.0" width="221" height="96"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naS-xe-frC">
-                                        <rect key="frame" x="0.0" y="0.0" width="94" height="96"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="96"/>
                                         <state key="normal" image="record_button"/>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="PVG-pd-Wsp" eventType="touchUpInside" id="HnG-z6-Lhs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9x-rc-3BK">
-                                        <rect key="frame" x="94" y="0.0" width="94" height="96"/>
+                                        <rect key="frame" x="74" y="0.0" width="73" height="96"/>
                                         <state key="normal" image="stop_button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtX-q5-Q7F">
+                                        <rect key="frame" x="147" y="0.0" width="74" height="96"/>
+                                        <state key="normal" image="finish_button"/>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="h9x-rc-3BK" firstAttribute="width" secondItem="naS-xe-frC" secondAttribute="width" id="Lw9-ag-qVM"/>
+                                    <constraint firstItem="FtX-q5-Q7F" firstAttribute="width" secondItem="h9x-rc-3BK" secondAttribute="width" id="xdw-U9-g6u"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="fCD-CW-j11" secondAttribute="trailing" id="Tb7-e3-IQi"/>
-                            <constraint firstItem="fCD-CW-j11" firstAttribute="leading" secondItem="5ey-r3-7Mc" secondAttribute="leadingMargin" id="YNL-Bo-WjT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fCD-CW-j11" secondAttribute="trailing" constant="-16" id="Tb7-e3-IQi"/>
+                            <constraint firstItem="fCD-CW-j11" firstAttribute="leading" secondItem="5ey-r3-7Mc" secondAttribute="leadingMargin" constant="-16" id="YNL-Bo-WjT"/>
                             <constraint firstItem="fCD-CW-j11" firstAttribute="top" secondItem="5ey-r3-7Mc" secondAttribute="topMargin" id="ZbS-c7-sPm"/>
                             <constraint firstAttribute="bottomMargin" secondItem="fCD-CW-j11" secondAttribute="bottom" id="lDl-ge-Sx4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="finishButton" destination="FtX-q5-Q7F" id="tK6-9C-tAK"/>
+                        <outlet property="startButton" destination="naS-xe-frC" id="XEQ-Dc-0B0"/>
+                        <outlet property="stopButton" destination="h9x-rc-3BK" id="gQc-Uu-lqu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eb-Wg-P73" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,6 +194,7 @@
     <resources>
         <image name="curved_white_button" width="743" height="134"/>
         <image name="ellipses" width="473" height="87"/>
+        <image name="finish_button" width="77" height="77"/>
         <image name="record_button" width="77" height="77"/>
         <image name="stop_button" width="77" height="77"/>
     </resources>
