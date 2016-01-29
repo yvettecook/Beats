@@ -33,6 +33,7 @@
 		1AA5BD9E1C5A4A3100F0369B /* SessionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5BD9D1C5A4A3100F0369B /* SessionRecorder.swift */; };
 		1AA5BDA11C5A4C1100F0369B /* SessionRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5BDA01C5A4C1100F0369B /* SessionRecorderTests.swift */; };
 		1AA5BDA31C5B8C0600F0369B /* SessionRecorderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5BDA21C5B8C0600F0369B /* SessionRecorderDelegate.swift */; };
+		1AA5BDA51C5BA5ED00F0369B /* UIButtonWithAspectFit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5BDA41C5BA5ED00F0369B /* UIButtonWithAspectFit.swift */; };
 		1AB1B5DA1C43CD3100AF8A6D /* MockPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */; };
 		1AE2DD301C4936FD00FB395E /* UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD2F1C4936FD00FB395E /* UITest.swift */; };
 		1AE2DD321C4BBE9200FB395E /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD311C4BBE9200FB395E /* TestHelpers.swift */; };
@@ -93,6 +94,7 @@
 		1AA5BD9D1C5A4A3100F0369B /* SessionRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRecorder.swift; sourceTree = "<group>"; };
 		1AA5BDA01C5A4C1100F0369B /* SessionRecorderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRecorderTests.swift; sourceTree = "<group>"; };
 		1AA5BDA21C5B8C0600F0369B /* SessionRecorderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRecorderDelegate.swift; sourceTree = "<group>"; };
+		1AA5BDA41C5BA5ED00F0369B /* UIButtonWithAspectFit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonWithAspectFit.swift; sourceTree = "<group>"; };
 		1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheral.swift; sourceTree = "<group>"; };
 		1AE2DD2F1C4936FD00FB395E /* UITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITest.swift; sourceTree = "<group>"; };
 		1AE2DD311C4BBE9200FB395E /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				1AA255671C40246300A7DAE5 /* Main.storyboard */,
+				1AA5BDA41C5BA5ED00F0369B /* UIButtonWithAspectFit.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				1AB1B5DA1C43CD3100AF8A6D /* MockPeripheral.swift in Sources */,
 				1AE2DD3C1C4C06B400FB395E /* MockPeripheralDelegate.swift in Sources */,
 				1A94609B1C5141DD00A0F04B /* BluetoothControllerState.swift in Sources */,
+				1AA5BDA51C5BA5ED00F0369B /* UIButtonWithAspectFit.swift in Sources */,
 				1AA255981C40270B00A7DAE5 /* MockBluetoothController.swift in Sources */,
 				1AA255641C40246300A7DAE5 /* AppDelegate.swift in Sources */,
 				1AA2559C1C4029CC00A7DAE5 /* MockCentralManager.swift in Sources */,

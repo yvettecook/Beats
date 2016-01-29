@@ -13,6 +13,7 @@ final class RecordingControlsViewController: UIViewController, SessionRecorderDe
     var sessionRecorder: SessionRecorder?
     
     @IBOutlet weak var stackView: UIStackView!
+    
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var finishButton: UIButton!
@@ -20,8 +21,7 @@ final class RecordingControlsViewController: UIViewController, SessionRecorderDe
     override func viewDidLoad() {
         sessionRecorder = SessionRecorder()
         sessionRecorder?.delegate = self
-        stopButton.hidden = true
-        finishButton.hidden = true
+        sessionRecorder?.state = .Inactive
     }
     
     func startRecording() {
@@ -54,6 +54,10 @@ final class RecordingControlsViewController: UIViewController, SessionRecorderDe
     
     func recorderDidUpdateState(state: SessionRecorderState) {
         switch state {
+        case .Inactive:
+            startButton.hidden = false
+            finishButton.hidden = true
+            stopButton.hidden = true
         case .Recording:
             startButton.hidden = true
             finishButton.hidden = true
@@ -66,4 +70,5 @@ final class RecordingControlsViewController: UIViewController, SessionRecorderDe
             break
         }
     }
+    
 }

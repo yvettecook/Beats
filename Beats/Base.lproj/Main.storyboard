@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -144,41 +145,125 @@
         <scene sceneID="Xiu-TQ-tUf">
             <objects>
                 <viewController storyboardIdentifier="RecordingControlsViewController" id="PVG-pd-Wsp" customClass="RecordingControlsViewController" customModule="Beats" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YcK-pL-SoS"/>
+                        <viewControllerLayoutGuide type="bottom" id="PCw-Rl-oG1"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5ey-r3-7Mc">
                         <rect key="frame" x="0.0" y="0.0" width="221" height="96"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fCD-CW-j11">
-                                <rect key="frame" x="0.0" y="0.0" width="221" height="96"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fCD-CW-j11">
+                                <rect key="frame" x="0.0" y="11" width="221" height="74"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naS-xe-frC">
-                                        <rect key="frame" x="0.0" y="0.0" width="74" height="96"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naS-xe-frC" customClass="UIButtonWithAspectFit" customModule="Beats" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="74" id="A76-RR-MMZ"/>
+                                            <constraint firstAttribute="width" secondItem="naS-xe-frC" secondAttribute="height" multiplier="1:1" id="FRS-DU-X0U"/>
+                                            <constraint firstAttribute="width" secondItem="naS-xe-frC" secondAttribute="height" multiplier="1:1" id="SIJ-0f-l1t"/>
+                                            <constraint firstAttribute="height" constant="62" id="n0x-fh-BxL"/>
+                                            <constraint firstAttribute="width" constant="62" id="nUM-Kq-p2x"/>
+                                        </constraints>
                                         <state key="normal" image="record_button"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="A76-RR-MMZ"/>
+                                                <exclude reference="FRS-DU-X0U"/>
+                                                <exclude reference="SIJ-0f-l1t"/>
+                                                <exclude reference="n0x-fh-BxL"/>
+                                                <exclude reference="nUM-Kq-p2x"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="buttonTapped:" destination="PVG-pd-Wsp" eventType="touchUpInside" id="HnG-z6-Lhs"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9x-rc-3BK">
-                                        <rect key="frame" x="74" y="0.0" width="73" height="96"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9x-rc-3BK" customClass="UIButtonWithAspectFit" customModule="Beats" customModuleProvider="target">
+                                        <rect key="frame" x="74" y="0.0" width="73" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="62" id="VMj-2x-VZm"/>
+                                            <constraint firstAttribute="height" constant="74" id="mhX-7u-l1k"/>
+                                            <constraint firstAttribute="height" constant="62" id="ot6-zM-uXs"/>
+                                            <constraint firstAttribute="width" secondItem="h9x-rc-3BK" secondAttribute="height" multiplier="1:1" id="qUv-ki-Wfu"/>
+                                        </constraints>
                                         <state key="normal" image="stop_button"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="VMj-2x-VZm"/>
+                                                <exclude reference="mhX-7u-l1k"/>
+                                                <exclude reference="ot6-zM-uXs"/>
+                                                <exclude reference="qUv-ki-Wfu"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="PVG-pd-Wsp" eventType="touchUpInside" id="yuT-FC-U5a"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtX-q5-Q7F">
-                                        <rect key="frame" x="147" y="0.0" width="74" height="96"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtX-q5-Q7F" customClass="UIButtonWithAspectFit" customModule="Beats" customModuleProvider="target">
+                                        <rect key="frame" x="147" y="0.0" width="74" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="74" id="42h-N0-14M"/>
+                                            <constraint firstAttribute="width" secondItem="FtX-q5-Q7F" secondAttribute="height" multiplier="1:1" id="Yhj-lc-O96"/>
+                                            <constraint firstAttribute="width" constant="62" id="tRr-db-c7W"/>
+                                            <constraint firstAttribute="height" constant="62" id="wb8-yR-aGz"/>
+                                        </constraints>
                                         <state key="normal" image="finish_button"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="42h-N0-14M"/>
+                                                <exclude reference="Yhj-lc-O96"/>
+                                                <exclude reference="tRr-db-c7W"/>
+                                                <exclude reference="wb8-yR-aGz"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="PVG-pd-Wsp" eventType="touchUpInside" id="5gu-p6-kSG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="naS-xe-frC" firstAttribute="width" secondItem="FtX-q5-Q7F" secondAttribute="width" id="0Ur-Cp-iqn"/>
                                     <constraint firstItem="h9x-rc-3BK" firstAttribute="width" secondItem="naS-xe-frC" secondAttribute="width" id="Lw9-ag-qVM"/>
+                                    <constraint firstItem="naS-xe-frC" firstAttribute="width" secondItem="h9x-rc-3BK" secondAttribute="width" id="NUm-1L-F82"/>
+                                    <constraint firstItem="naS-xe-frC" firstAttribute="height" secondItem="FtX-q5-Q7F" secondAttribute="height" id="VvT-qY-l38"/>
+                                    <constraint firstItem="naS-xe-frC" firstAttribute="height" secondItem="fCD-CW-j11" secondAttribute="height" id="d7M-Pa-jxO"/>
+                                    <constraint firstItem="naS-xe-frC" firstAttribute="height" secondItem="h9x-rc-3BK" secondAttribute="height" id="i0A-JU-kMG"/>
                                     <constraint firstItem="FtX-q5-Q7F" firstAttribute="width" secondItem="h9x-rc-3BK" secondAttribute="width" id="xdw-U9-g6u"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0Ur-Cp-iqn"/>
+                                        <exclude reference="NUm-1L-F82"/>
+                                        <exclude reference="VvT-qY-l38"/>
+                                        <exclude reference="d7M-Pa-jxO"/>
+                                        <exclude reference="i0A-JU-kMG"/>
+                                        <exclude reference="Lw9-ag-qVM"/>
+                                        <exclude reference="xdw-U9-g6u"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="fCD-CW-j11" firstAttribute="top" secondItem="5ey-r3-7Mc" secondAttribute="topMargin" id="2Z0-7l-a31"/>
+                            <constraint firstItem="fCD-CW-j11" firstAttribute="top" secondItem="5ey-r3-7Mc" secondAttribute="topMargin" constant="11" id="3ZA-6N-Kcd"/>
+                            <constraint firstItem="fCD-CW-j11" firstAttribute="centerY" secondItem="5ey-r3-7Mc" secondAttribute="centerY" id="Kwz-ON-qyJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fCD-CW-j11" secondAttribute="trailing" constant="-16" id="Tb7-e3-IQi"/>
                             <constraint firstItem="fCD-CW-j11" firstAttribute="leading" secondItem="5ey-r3-7Mc" secondAttribute="leadingMargin" constant="-16" id="YNL-Bo-WjT"/>
                             <constraint firstItem="fCD-CW-j11" firstAttribute="top" secondItem="5ey-r3-7Mc" secondAttribute="topMargin" id="ZbS-c7-sPm"/>
                             <constraint firstAttribute="bottomMargin" secondItem="fCD-CW-j11" secondAttribute="bottom" id="lDl-ge-Sx4"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="fCD-CW-j11" secondAttribute="bottom" id="q6m-Cu-CH4"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="fCD-CW-j11" secondAttribute="bottom" constant="11" id="veu-Zn-3hY"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2Z0-7l-a31"/>
+                                <exclude reference="ZbS-c7-sPm"/>
+                                <exclude reference="lDl-ge-Sx4"/>
+                                <exclude reference="q6m-Cu-CH4"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="finishButton" destination="FtX-q5-Q7F" id="tK6-9C-tAK"/>
@@ -195,8 +280,8 @@
     <resources>
         <image name="curved_white_button" width="743" height="134"/>
         <image name="ellipses" width="473" height="87"/>
-        <image name="finish_button" width="77" height="77"/>
-        <image name="record_button" width="77" height="77"/>
-        <image name="stop_button" width="77" height="77"/>
+        <image name="finish_button" width="202" height="202"/>
+        <image name="record_button" width="202" height="202"/>
+        <image name="stop_button" width="202" height="202"/>
     </resources>
 </document>
