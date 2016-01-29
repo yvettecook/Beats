@@ -10,25 +10,35 @@ import Foundation
 
 class SessionRecorder: NSObject {
     
+    var delegate: SessionRecorderDelegate?
+    
+    var state: SessionRecorderState {
+        didSet {
+            delegate?.recorderDidUpdateState(state)
+        }
+    }
+    
     override init() {
+        state = .Inactive
         super.init()
     }
     
     func startRecording() {
-        
+        state = .Recording
     }
     
     func pauseRecording() {
-        
+        state = .Paused
     }
     
     func finishRecording() {
-        
+        state = .Finished
     }
     
 }
 
 enum SessionRecorderState {
+    case Inactive
     case Recording
     case Paused
     case Finished

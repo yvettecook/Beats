@@ -148,7 +148,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="221" height="96"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCD-CW-j11">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="fCD-CW-j11">
                                 <rect key="frame" x="0.0" y="0.0" width="221" height="96"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naS-xe-frC">
@@ -182,6 +182,7 @@
                     </view>
                     <connections>
                         <outlet property="finishButton" destination="FtX-q5-Q7F" id="tK6-9C-tAK"/>
+                        <outlet property="stackView" destination="fCD-CW-j11" id="jSQ-sd-aYj"/>
                         <outlet property="startButton" destination="naS-xe-frC" id="XEQ-Dc-0B0"/>
                         <outlet property="stopButton" destination="h9x-rc-3BK" id="gQc-Uu-lqu"/>
                     </connections>

@@ -8,15 +8,20 @@
 
 import UIKit
 
-final class RecordingControlsViewController: UIViewController {
+final class RecordingControlsViewController: UIViewController, SessionRecorderDelegate {
     
     var sessionRecorder: SessionRecorder?
     
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var finishButton: UIButton!
     
     override func viewDidLoad() {
+        sessionRecorder = SessionRecorder()
+        sessionRecorder?.delegate = self
+        stopButton.hidden = true
+        finishButton.hidden = true
     }
     
     func startRecording() {
@@ -35,13 +40,28 @@ final class RecordingControlsViewController: UIViewController {
     }
     
     @IBAction func buttonTapped(sender: UIButton) {
-        switch sender{
+        switch sender {
         case startButton:
             startRecording()
         case stopButton:
             pauseRecording()
         case finishButton:
             finishRecording()
+        default:
+            break
+        }
+    }
+    
+    func recorderDidUpdateState(state: SessionRecorderState) {
+        switch state {
+        case .Recording:
+            startButton.hidden = true
+            finishButton.hidden = true
+            stopButton.hidden = false
+        case .Paused:
+            startButton.hidden = false
+            finishButton.hidden = false
+            stopButton.hidden = true
         default:
             break
         }

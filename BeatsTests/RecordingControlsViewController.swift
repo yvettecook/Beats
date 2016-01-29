@@ -26,6 +26,7 @@ class RecordingControlsViewControllerTests : XCTestCase {
         
         stubRecorder = StubSessionRecorder()
         recordingControlsVC.sessionRecorder = stubRecorder
+        stubRecorder.delegate = recordingControlsVC
     }
     
     override func tearDown() {
@@ -62,15 +63,34 @@ class RecordingControlsViewControllerTests : XCTestCase {
         XCTAssertEqual(stubRecorder.state, SessionRecorderState.Finished)
     }
     
+    func testIfStateNilRecordButtonShown() {
+        stubRecorder.state = .Inactive
+        XCTAssertFalse(recordingControlsVC.startButton.hidden)
+        XCTAssertTrue(recordingControlsVC.stopButton.hidden)
+        XCTAssertTrue(recordingControlsVC.finishButton.hidden)
+    }
+    
+    func testIfRecordingStopButtonShown() {
+        stubRecorder.state = .Recording
+        XCTAssertTrue(recordingControlsVC.startButton.hidden)
+        XCTAssertFalse(recordingControlsVC.stopButton.hidden)
+        XCTAssertTrue(recordingControlsVC.finishButton.hidden)
+    }
+    
+    func testIfPauseRecordingStartFinishButtonsShown() {
+        stubRecorder.state = .Paused
+        XCTAssertFalse(recordingControlsVC.startButton.hidden)
+        XCTAssertTrue(recordingControlsVC.stopButton.hidden)
+        XCTAssertFalse(recordingControlsVC.finishButton.hidden)
+    }
 }
 
 
 class StubSessionRecorder: SessionRecorder {
- 
-    var state: SessionRecorderState?
     
     override init() {
         super.init()
+        state = .Inactive
     }
     
     override func startRecording() {

@@ -3,6 +3,30 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "HeartRateViewControllerTests.(testHeartRateViewDisplayCurrentHR(HeartRateViewControllerTests) -&gt; () -&gt; ()).(closure #1):HeartRateViewControllerTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.heartRateVC.heartRateKit">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ScanningViewControllerTests.testHasState() -&gt; ():ScanningViewControllerTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scanningVC">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StubSessionRecorder.state.didset:RecordingControlsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "delegate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MockBluetoothController.state.didset:MockBluetoothController.swift">
          <PersistentStrings>
             <PersistentString
@@ -19,14 +43,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ScanningViewControllerTests.testHasState() -&gt; ():ScanningViewControllerTests.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "scanningVC">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "MockCentralManager.connectPeripheral(MockPeripheral, options : [String : AnyObject]?) -&gt; ():MockCentralManager.swift">
          <PersistentStrings>
             <PersistentString
@@ -39,14 +55,6 @@
          <PersistentStrings>
             <PersistentString
                value = "heartRateService!">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "HeartRateViewControllerTests.(testHeartRateViewDisplayCurrentHR(HeartRateViewControllerTests) -&gt; () -&gt; ()).(closure #1):HeartRateViewControllerTests.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.heartRateVC.heartRateKit">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

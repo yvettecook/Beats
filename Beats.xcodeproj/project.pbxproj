@@ -32,6 +32,7 @@
 		1AA5BD9B1C5A403700F0369B /* RecordingControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5BD9A1C5A403700F0369B /* RecordingControlsViewController.swift */; };
 		1AA5BD9E1C5A4A3100F0369B /* SessionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5BD9D1C5A4A3100F0369B /* SessionRecorder.swift */; };
 		1AA5BDA11C5A4C1100F0369B /* SessionRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5BDA01C5A4C1100F0369B /* SessionRecorderTests.swift */; };
+		1AA5BDA31C5B8C0600F0369B /* SessionRecorderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA5BDA21C5B8C0600F0369B /* SessionRecorderDelegate.swift */; };
 		1AB1B5DA1C43CD3100AF8A6D /* MockPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */; };
 		1AE2DD301C4936FD00FB395E /* UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD2F1C4936FD00FB395E /* UITest.swift */; };
 		1AE2DD321C4BBE9200FB395E /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD311C4BBE9200FB395E /* TestHelpers.swift */; };
@@ -91,6 +92,7 @@
 		1AA5BD9A1C5A403700F0369B /* RecordingControlsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingControlsViewController.swift; sourceTree = "<group>"; };
 		1AA5BD9D1C5A4A3100F0369B /* SessionRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRecorder.swift; sourceTree = "<group>"; };
 		1AA5BDA01C5A4C1100F0369B /* SessionRecorderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRecorderTests.swift; sourceTree = "<group>"; };
+		1AA5BDA21C5B8C0600F0369B /* SessionRecorderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRecorderDelegate.swift; sourceTree = "<group>"; };
 		1AB1B5D91C43CD3100AF8A6D /* MockPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheral.swift; sourceTree = "<group>"; };
 		1AE2DD2F1C4936FD00FB395E /* UITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITest.swift; sourceTree = "<group>"; };
 		1AE2DD311C4BBE9200FB395E /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				1AA5BD9D1C5A4A3100F0369B /* SessionRecorder.swift */,
+				1AA5BDA21C5B8C0600F0369B /* SessionRecorderDelegate.swift */,
 			);
 			name = SessionRecorder;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				1A2D10B81C4FB8AC0076F7E4 /* HeartRateKitUIDelegate.swift in Sources */,
 				1A2D10AB1C4E691B0076F7E4 /* MockCharacteristic.swift in Sources */,
 				1AA255A61C42F19700A7DAE5 /* MockCentralManagerDelegate.swift in Sources */,
+				1AA5BDA31C5B8C0600F0369B /* SessionRecorderDelegate.swift in Sources */,
 				1AE2DD431C4E646E00FB395E /* MockHeartRateMode.swift in Sources */,
 				1AA255961C40269D00A7DAE5 /* BluetoothControllerProtocol.swift in Sources */,
 				1AA255941C4024F900A7DAE5 /* HeartRateKit.swift in Sources */,
