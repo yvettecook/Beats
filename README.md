@@ -57,7 +57,8 @@ extension XCTestCase {
         }
     }
 
-}```
+}
+```
 
 Example usage:
 
