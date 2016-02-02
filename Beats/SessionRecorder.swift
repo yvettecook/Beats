@@ -12,6 +12,8 @@ class SessionRecorder: NSObject {
     
     var delegate: SessionRecorderDelegate?
     
+    var currentSession: Session?
+    
     var state: SessionRecorderState {
         didSet {
             delegate?.recorderDidUpdateState(state)
@@ -22,6 +24,8 @@ class SessionRecorder: NSObject {
         state = .Inactive
         super.init()
     }
+    
+    // MARK: Recording
     
     func startRecording() {
         state = .Recording
@@ -35,6 +39,16 @@ class SessionRecorder: NSObject {
         state = .Finished
     }
     
+    // MARK: Sessions
+    
+    func newSession() {
+        currentSession = Session()
+    }
+    
+    func addValue(value: Int) {
+        currentSession?.addValue(value)
+    }
+
 }
 
 enum SessionRecorderState {
