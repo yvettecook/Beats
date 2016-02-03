@@ -48,6 +48,7 @@ class SessionRecorderTests: XCTestCase {
         let sessionLength = sessionRecorder.currentSession!.values?.count
         XCTAssertEqual(sessionLength, 1)
     }
+    
 
 }
 
