@@ -46,7 +46,9 @@ class SessionRecorder: NSObject {
     }
     
     func addValue(value: Int) {
-        currentSession?.addValue(value)
+        if state == .Recording {
+            currentSession?.addValue(value)
+        }
     }
 
 }

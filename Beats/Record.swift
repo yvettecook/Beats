@@ -10,5 +10,10 @@ import Foundation
 
 class Record: NSObject {
     
+    var value: Int!
+    
+    init(value: Int) {
+        self.value = value
+    }
     
 }

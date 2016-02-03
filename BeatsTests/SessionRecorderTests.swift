@@ -42,13 +42,21 @@ class SessionRecorderTests: XCTestCase {
         XCTAssertNotNil(sessionRecorder.currentSession)
     }
     
-    func testCanAddValueToSession() {
+    func testCanAddValueToSessionIfRecording() {
+        sessionRecorder.startRecording()
         sessionRecorder.newSession()
         sessionRecorder.addValue(1)
         let sessionLength = sessionRecorder.currentSession!.values?.count
         XCTAssertEqual(sessionLength, 1)
     }
     
+    func testDoesNotAddValueIfPaused() {
+        sessionRecorder.newSession()
+        sessionRecorder.pauseRecording()
+        sessionRecorder.addValue(1)
+        let sessionLength = sessionRecorder.currentSession!.values?.count
+        XCTAssertEqual(sessionLength, 0)
+    }
 
 }
 
