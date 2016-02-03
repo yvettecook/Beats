@@ -57,7 +57,7 @@ class MockBluetoothControllerPeripheralTests: XCTestCase {
         }
         
         mockPeripheral.setHeartRateMode(.SteadyResting)
-        asyncTest(completion, wait: 6)
+        asyncTest(completion, wait: 4)
         
         waitForExpectationsWithTimeout(6.5, handler: nil)
     }
