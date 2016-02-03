@@ -63,11 +63,11 @@ Example usage:
 
 ```swift
 func testReceivesUpdatesOnHeartRate() {
-    let expectation = expectationWithDescription("Should see a pulse")
+    weak var expectation = expectationWithDescription("Should see a pulse")
 
     let completion = { () -> Void in
         XCTAssertTrue(self.mockBluetoothController.hrNotificationReceived)
-        expectation.fulfill()
+        expectation?.fulfill()
     }
 
     mockPeripheral.setHeartRateMode(.SteadyResting)
