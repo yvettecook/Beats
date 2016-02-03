@@ -45,11 +45,11 @@ class MockBluetoothControllerConnectionTests: XCTestCase {
     }
     
     func testOnScanForAvailableMonitorsPeripheralIsFound() {
-        let expectation = expectationWithDescription("didDiscoverPeripheral should be called")
+        weak var expectation = expectationWithDescription("didDiscoverPeripheral should be called")
         
         let completion = { () -> Void in
             XCTAssertTrue(self.mockBluetoothController.didDiscoverPeripheralCalled)
-            expectation.fulfill()
+            expectation?.fulfill()
         }
     
         mockBluetoothController.scanForAvailableMonitors()
@@ -60,11 +60,11 @@ class MockBluetoothControllerConnectionTests: XCTestCase {
     }
     
     func testWhenPeripheralFoundConnected() {
-        let expectation = expectationWithDescription("Should connect to peripheral when found")
+        weak var expectation = expectationWithDescription("Should connect to peripheral when found")
         
         let completion = { () -> Void in
             XCTAssertTrue(self.mockBluetoothController.didConnectPeripheralCalled)
-            expectation.fulfill()
+            expectation?.fulfill()
         }
         
         mockBluetoothController.scanForAvailableMonitors()

@@ -6,6 +6,11 @@
 //  Copyright © 2016 Yvette. All rights reserved.
 //
 
+/* weak var used for expectations to avoid crash if expectation is fulfilled after wait period
+
+    http://stackoverflow.com/questions/27555499/xctestexpectation-how-to-avoid-calling-the-fulfill-method-after-the-wait-contex
+*/
+
 import XCTest
 @testable import Beats
 
@@ -44,17 +49,17 @@ class MockBluetoothControllerPeripheralTests: XCTestCase {
     }
     
     func testReceivesUpdatesOnHeartRate() {
-        let expectation = expectationWithDescription("Should see a pulse")
+        weak var expectation = expectationWithDescription("Should see a pulse")
         
         let completion = { () -> Void in
             XCTAssertTrue(self.mockBluetoothController.hrNotificationReceived)
-            expectation.fulfill()
+            expectation?.fulfill()
         }
         
         mockPeripheral.setHeartRateMode(.SteadyResting)
-        asyncTest(completion, wait: 5)
+        asyncTest(completion, wait: 6)
         
-        waitForExpectationsWithTimeout(5.5, handler: nil)
+        waitForExpectationsWithTimeout(6.5, handler: nil)
     }
     
 }

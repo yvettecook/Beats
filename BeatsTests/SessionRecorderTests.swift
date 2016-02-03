@@ -49,5 +49,5 @@ class SessionRecorderTests: XCTestCase {
         XCTAssertEqual(sessionLength, 1)
     }
 
-} 
+}
 

@@ -57,11 +57,11 @@ class ScanningViewControllerTests: XCTestCase {
     }
     
     func testLeavesScanningScreenAfterConnected() {
-        let expectation = expectationWithDescription("Should leave screen on connection")
+        weak var expectation = expectationWithDescription("Should leave screen on connection")
         
         let completion = { () -> Void in
             XCTAssertTrue(self.scanningVC.segueToHeartRateTriggered)
-            expectation.fulfill()
+            expectation?.fulfill()
         }
         
         scanningVC.setToDemoMode()
@@ -73,13 +73,13 @@ class ScanningViewControllerTests: XCTestCase {
     }
     
     func testOnlyTransitionsToNextViewOnce() {
-        let expectation = expectationWithDescription("Should only transition once")
+        weak var expectation = expectationWithDescription("Should only transition once")
         
         let completion = { () -> Void in
             let count = self.scanningVC.segueCount
             print("Count: \(count)")
             XCTAssertTrue(count == 1)
-            expectation.fulfill()
+            expectation?.fulfill()
         }
         
         scanningVC.setToDemoMode()

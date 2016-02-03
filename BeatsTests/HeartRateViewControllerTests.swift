@@ -39,13 +39,13 @@ class HeartRateViewControllerTests: XCTestCase {
     }
 
     func testHeartRateViewDisplayCurrentHR() {
-        let expectation = expectationWithDescription("Current heart rate should be displayed")
+        weak var expectation = expectationWithDescription("Current heart rate should be displayed")
         
         let completion = { () -> Void in
             let currentHR = self.heartRateVC.heartRateKit?.currentHeartRate
             let displayBpm = self.heartRateVC.bpmLabel.text
             XCTAssertEqual(displayBpm, "\(currentHR!)")
-            expectation.fulfill()
+            expectation?.fulfill()
         }
         
         asyncTest(completion, wait: 5)

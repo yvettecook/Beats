@@ -56,11 +56,11 @@ class MockPeripheralTests: XCTestCase {
     }
 
     func testCanStartPulse() {
-        let expectation = expectationWithDescription("Pulse should start")
+        weak var expectation = expectationWithDescription("Pulse should start")
         
         let completion = { () -> Void in
             XCTAssertTrue(self.mockPeripheral.updateHRCalled)
-            expectation.fulfill()
+            expectation?.fulfill()
         }
         
         mockPeripheral.setHeartRateMode(.SteadyResting)
@@ -70,12 +70,12 @@ class MockPeripheralTests: XCTestCase {
     }
     
     func testIfNotifyOnHRSetWillUpdateDelegate() {
-        let expectation = expectationWithDescription("Delegate should be updated")
+        weak var expectation = expectationWithDescription("Delegate should be updated")
         
         let completion = { () -> Void in
             let btc = self.mockPeripheral.delegate as! MockBluetoothController
             XCTAssertTrue(btc.hrNotificationReceived)
-            expectation.fulfill()
+            expectation?.fulfill()
         }
         
         mockPeripheral.setHeartRateMode(.SteadyResting)

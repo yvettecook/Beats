@@ -36,12 +36,12 @@ class HeartRateKitTests: XCTestCase {
     }
     
     func testStateChangeWhenDeviceFound() {
-        let expectation = expectationWithDescription("State will change to .FoundMonitor")
+        weak var expectation = expectationWithDescription("State will change to .FoundMonitor")
         
         let completionBlock = { () -> Void in
             let state = self.heartRateKit.state
             XCTAssertEqual(state, HeartRateKitState.FoundMonitor)
-            expectation.fulfill()
+            expectation?.fulfill()
         }
         
         heartRateKit.scanForMonitors()
@@ -52,12 +52,12 @@ class HeartRateKitTests: XCTestCase {
     }
     
     func testCanConnectToAvailableMonitor() {
-        let expectation = expectationWithDescription("Should connect to available monitor")
+        weak var expectation = expectationWithDescription("Should connect to available monitor")
         
         let completionBlock = { () -> Void in
             let state = self.heartRateKit.state
             XCTAssertEqual(state, HeartRateKitState.Connected)
-            expectation.fulfill()
+            expectation?.fulfill()
         }
         
         heartRateKit.scanForMonitors()
@@ -68,12 +68,12 @@ class HeartRateKitTests: XCTestCase {
     }
     
     func testCanReceiveHeartRate() {
-        let expectation = expectationWithDescription("Should receive a heart rate from Bluetooth Controller")
+        weak var expectation = expectationWithDescription("Should receive a heart rate from Bluetooth Controller")
         
         let completionBlock = { () -> Void in
             XCTAssertNotNil(self.heartRateKit.currentHeartRate)
             XCTAssertTrue(self.heartRateKit.currentHeartRate > 50)
-            expectation.fulfill()
+            expectation?.fulfill()
         }
         
         heartRateKit.scanForMonitors()

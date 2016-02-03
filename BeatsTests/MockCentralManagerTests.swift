@@ -39,13 +39,13 @@ class MockCentralManagerTests: XCTestCase {
     }
 
     func testFindsPeripheralOnScanForPeripherals() {
-        let expectation = expectationWithDescription("Should find Peripheral when scanning")
+        weak var expectation = expectationWithDescription("Should find Peripheral when scanning")
         
         mockCentralManager.scanForPeripheralsWithServices(nil, options: nil)
         
         let completion = { () -> Void in
             XCTAssertTrue(self.mockCentralManager.discoveredPeripheral)
-            expectation.fulfill()
+            expectation?.fulfill()
         }
         
         asyncTest(completion, wait: 2)
