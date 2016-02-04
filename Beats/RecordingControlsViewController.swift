@@ -19,7 +19,7 @@ final class RecordingControlsViewController: UIViewController, SessionRecorderDe
     @IBOutlet weak var finishButton: UIButton!
     
     override func viewDidLoad() {
-        sessionRecorder = SessionRecorder()
+        sessionRecorder = SessionRecorder.sharedInstance
         sessionRecorder?.delegate = self
         sessionRecorder?.state = .Inactive
     }

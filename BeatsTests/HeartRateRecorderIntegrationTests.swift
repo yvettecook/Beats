@@ -1,18 +1,18 @@
 //
-//  HeartRateViewControllerTests.swift
+//  HeartRateRecorderIntegrationTests.swift
 //  Beats
 //
-//  Created by Yvette Cook on 21/01/2016.
+//  Created by Yvette Cook on 04/02/2016.
 //  Copyright © 2016 Yvette. All rights reserved.
 //
 
 import XCTest
-
 @testable import Beats
 
-class HeartRateViewControllerTests: XCTestCase {
+class HeartRateRecorderIntegrationTests: XCTestCase {
     
     var heartRateVC: HeartRateViewController!
+    var sessionRecorder: SessionRecorder!
 
     override func setUp() {
         super.setUp()
@@ -25,36 +25,27 @@ class HeartRateViewControllerTests: XCTestCase {
         
         heartRateVC.heartRateKit?.mode = .Demo
         heartRateVC.heartRateKit?.scanForMonitors()
+        sessionRecorder = SessionRecorder.sharedInstance
     }
     
     override func tearDown() {
         super.tearDown()
     }
-    
-    func testHasHeartRateKit() {
-        XCTAssertNotNil(heartRateVC.heartRateKit)
-        let delegate = heartRateVC.heartRateKit!.uiDelegate! as? HeartRateViewController
-        XCTAssertNotNil(delegate)
-        XCTAssertEqual(heartRateVC, delegate)
-    }
 
-    func testHeartRateViewDisplayCurrentHR() {
-        weak var expectation = expectationWithDescription("Current heart rate should be displayed")
+    func testHeartRateIsRecorded() {
+        weak var expectation = expectationWithDescription("Heart rate should be saved to session")
         
         let completion = { () -> Void in
-            let currentHR = self.heartRateVC.heartRateKit?.currentHeartRate
-            let displayBpm = self.heartRateVC.bpmLabel.text
-            XCTAssertEqual(displayBpm, "\(currentHR!)")
+            let valueCount = self.sessionRecorder.currentSession?.values?.count
+            XCTAssertTrue(valueCount > 2)
             expectation?.fulfill()
         }
         
-        asyncTest(completion, wait: 5)
+        heartRateVC.recordingControlsVC?.startRecording()
+        asyncTest(completion, wait: 4)
         
         waitForExpectationsWithTimeout(5.5, handler: nil)
     }
-    
-    func testHasARecordingControlsVC() {
-        XCTAssertNotNil(heartRateVC.recordingControlsVC)
-    }
+
 
 }

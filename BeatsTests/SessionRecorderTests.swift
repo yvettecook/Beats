@@ -14,12 +14,17 @@ class SessionRecorderTests: XCTestCase {
     var sessionRecorder: SessionRecorder!
 
     override func setUp() {
-        sessionRecorder = SessionRecorder()
+        sessionRecorder = SessionRecorder.sharedInstance
         super.setUp()
     }
     
     override func tearDown() {
         super.tearDown()
+    }
+    
+    func testSingletonIsSame() {
+        let recorder1 = SessionRecorder.sharedInstance
+        XCTAssertEqual(sessionRecorder, recorder1)
     }
 
     func testCanStartRecording() {
@@ -57,6 +62,6 @@ class SessionRecorderTests: XCTestCase {
         let sessionLength = sessionRecorder.currentSession!.values?.count
         XCTAssertEqual(sessionLength, 0)
     }
-
+    
 }
 

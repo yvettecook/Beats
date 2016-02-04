@@ -13,7 +13,8 @@ import XCTest
 class RecordingControlsViewControllerTests : XCTestCase {
     
     var recordingControlsVC: RecordingControlsViewController!
-    var stubRecorder: StubSessionRecorder!
+    var recorder: SessionRecorder!
+
     
     override func setUp() {
         super.setUp()
@@ -24,9 +25,7 @@ class RecordingControlsViewControllerTests : XCTestCase {
         
         XCTAssertNotNil(recordingControlsVC.view)
         
-        stubRecorder = StubSessionRecorder()
-        recordingControlsVC.sessionRecorder = stubRecorder
-        stubRecorder.delegate = recordingControlsVC
+        recorder = recordingControlsVC.sessionRecorder
     }
     
     override func tearDown() {
@@ -39,70 +38,50 @@ class RecordingControlsViewControllerTests : XCTestCase {
     
     func testCanStartRecording() {
         recordingControlsVC.startRecording()
-        XCTAssertEqual(stubRecorder.state, SessionRecorderState.Recording)
+        XCTAssertEqual(recorder.state, SessionRecorderState.Recording)
     }
     
     func testCanStopRecording() {
         recordingControlsVC.pauseRecording()
-        XCTAssertEqual(stubRecorder.state, SessionRecorderState.Paused)
+        XCTAssertEqual(recorder.state, SessionRecorderState.Paused)
     }
     
     func testCanFinishRecording() {
         recordingControlsVC.finishRecording()
-        XCTAssertEqual(stubRecorder.state, SessionRecorderState.Finished)
+        XCTAssertEqual(recorder.state, SessionRecorderState.Finished)
     }
     
     func testButtonTappedControlsRecording() {
         recordingControlsVC.buttonTapped(recordingControlsVC.startButton)
-        XCTAssertEqual(stubRecorder.state, SessionRecorderState.Recording)
+        XCTAssertEqual(recorder.state, SessionRecorderState.Recording)
         
         recordingControlsVC.buttonTapped(recordingControlsVC.stopButton)
-        XCTAssertEqual(stubRecorder.state, SessionRecorderState.Paused)
+        XCTAssertEqual(recorder.state, SessionRecorderState.Paused)
         
         recordingControlsVC.buttonTapped(recordingControlsVC.finishButton)
-        XCTAssertEqual(stubRecorder.state, SessionRecorderState.Finished)
+        XCTAssertEqual(recorder.state, SessionRecorderState.Finished)
     }
     
     func testIfStateNilRecordButtonShown() {
-        stubRecorder.state = .Inactive
+        recorder.state = .Inactive
         XCTAssertFalse(recordingControlsVC.startButton.hidden)
         XCTAssertTrue(recordingControlsVC.stopButton.hidden)
         XCTAssertTrue(recordingControlsVC.finishButton.hidden)
     }
     
     func testIfRecordingStopButtonShown() {
-        stubRecorder.state = .Recording
+        recorder.state = .Recording
         XCTAssertTrue(recordingControlsVC.startButton.hidden)
         XCTAssertFalse(recordingControlsVC.stopButton.hidden)
         XCTAssertTrue(recordingControlsVC.finishButton.hidden)
     }
     
     func testIfPauseRecordingStartFinishButtonsShown() {
-        stubRecorder.state = .Paused
+        recorder.state = .Paused
         XCTAssertFalse(recordingControlsVC.startButton.hidden)
         XCTAssertTrue(recordingControlsVC.stopButton.hidden)
         XCTAssertFalse(recordingControlsVC.finishButton.hidden)
     }
+    
 }
 
-
-class StubSessionRecorder: SessionRecorder {
-    
-    override init() {
-        super.init()
-        state = .Inactive
-    }
-    
-    override func startRecording() {
-        state = .Recording
-    }
-    
-    override func pauseRecording() {
-        state = .Paused
-    }
-    
-    override func finishRecording() {
-        state = .Finished
-    }
-
-}

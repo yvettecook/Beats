@@ -121,7 +121,7 @@
                                     <constraint firstAttribute="width" constant="221" id="FsP-vi-tbr"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="PVG-pd-Wsp" kind="embed" id="vqJ-aU-SzF"/>
+                                    <segue destination="PVG-pd-Wsp" kind="embed" identifier="EmbedControls" id="vqJ-aU-SzF"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -135,6 +135,7 @@
                     </view>
                     <connections>
                         <outlet property="bpmLabel" destination="bil-nw-S7c" id="dPK-n5-gQM"/>
+                        <outlet property="recordingControlsView" destination="rou-DV-zZp" id="BKU-oG-q7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOp-w5-61G" userLabel="First Responder" sceneMemberID="firstResponder"/>

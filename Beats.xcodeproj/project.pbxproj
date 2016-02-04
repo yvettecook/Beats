@@ -17,6 +17,7 @@
 		1A6EC44B1C512DFF00A042EA /* BluetoothController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6EC44A1C512DFF00A042EA /* BluetoothController.swift */; };
 		1A8F45851C443382002B45B7 /* MockPeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */; };
 		1A94609B1C5141DD00A0F04B /* BluetoothControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94609A1C5141DD00A0F04B /* BluetoothControllerState.swift */; };
+		1A94A8021C638F9F00250E7A /* HeartRateRecorderIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94A8011C638F9F00250E7A /* HeartRateRecorderIntegrationTests.swift */; };
 		1AA255641C40246300A7DAE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA255631C40246300A7DAE5 /* AppDelegate.swift */; };
 		1AA255691C40246300A7DAE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA255671C40246300A7DAE5 /* Main.storyboard */; };
 		1AA2556E1C40246300A7DAE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AA2556C1C40246300A7DAE5 /* LaunchScreen.storyboard */; };
@@ -38,6 +39,7 @@
 		1AC766B61C612CAD00F5E1D4 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC766B51C612CAD00F5E1D4 /* Session.swift */; };
 		1AC766B81C61360500F5E1D4 /* SessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC766B71C61360500F5E1D4 /* SessionTests.swift */; };
 		1AC766BA1C613DA500F5E1D4 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC766B91C613DA500F5E1D4 /* Record.swift */; };
+		1AC86D281C62666A00C92C70 /* RecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC86D271C62666A00C92C70 /* RecordTests.swift */; };
 		1AE2DD301C4936FD00FB395E /* UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD2F1C4936FD00FB395E /* UITest.swift */; };
 		1AE2DD321C4BBE9200FB395E /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD311C4BBE9200FB395E /* TestHelpers.swift */; };
 		1AE2DD341C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE2DD331C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift */; };
@@ -75,6 +77,7 @@
 		1A6EC44A1C512DFF00A042EA /* BluetoothController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothController.swift; sourceTree = "<group>"; };
 		1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheralTests.swift; sourceTree = "<group>"; };
 		1A94609A1C5141DD00A0F04B /* BluetoothControllerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothControllerState.swift; sourceTree = "<group>"; };
+		1A94A8011C638F9F00250E7A /* HeartRateRecorderIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateRecorderIntegrationTests.swift; sourceTree = "<group>"; };
 		1AA255601C40246300A7DAE5 /* Beats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA255631C40246300A7DAE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AA255681C40246300A7DAE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 		1AC766B51C612CAD00F5E1D4 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		1AC766B71C61360500F5E1D4 /* SessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionTests.swift; sourceTree = "<group>"; };
 		1AC766B91C613DA500F5E1D4 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		1AC86D271C62666A00C92C70 /* RecordTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTests.swift; sourceTree = "<group>"; };
 		1AE2DD2F1C4936FD00FB395E /* UITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITest.swift; sourceTree = "<group>"; };
 		1AE2DD311C4BBE9200FB395E /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		1AE2DD331C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBluetoothControllerConnectionTests.swift; sourceTree = "<group>"; };
@@ -213,6 +217,14 @@
 			name = BluetoothController;
 			sourceTree = "<group>";
 		};
+		1A94A8001C638F7200250E7A /* Integration Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1A94A8011C638F9F00250E7A /* HeartRateRecorderIntegrationTests.swift */,
+			);
+			name = "Integration Tests";
+			sourceTree = "<group>";
+		};
 		1AA255571C40246300A7DAE5 = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +268,7 @@
 				1A2D10AE1C4EBA9B0076F7E4 /* ViewController Tests */,
 				1A2D10AD1C4E95170076F7E4 /* HeartRateKit Tests */,
 				1AA5BD9F1C5A4BEA00F0369B /* SessionRecorderTests */,
+				1A94A8001C638F7200250E7A /* Integration Tests */,
 				1A2D10B11C4EBAC60076F7E4 /* Helpers */,
 			);
 			path = BeatsTests;
@@ -286,6 +299,7 @@
 			children = (
 				1AA5BDA01C5A4C1100F0369B /* SessionRecorderTests.swift */,
 				1AC766B71C61360500F5E1D4 /* SessionTests.swift */,
+				1AC86D271C62666A00C92C70 /* RecordTests.swift */,
 			);
 			name = SessionRecorderTests;
 			sourceTree = "<group>";
@@ -462,9 +476,11 @@
 			files = (
 				1AA5BDA11C5A4C1100F0369B /* SessionRecorderTests.swift in Sources */,
 				1AA5BD9B1C5A403700F0369B /* RecordingControlsViewController.swift in Sources */,
+				1AC86D281C62666A00C92C70 /* RecordTests.swift in Sources */,
 				1AE2DD361C4BDBFD00FB395E /* MockBluetoothControllerPeripheralTests.swift in Sources */,
 				1AC766B81C61360500F5E1D4 /* SessionTests.swift in Sources */,
 				1AA2559E1C42E6E600A7DAE5 /* MockCentralManagerTests.swift in Sources */,
+				1A94A8021C638F9F00250E7A /* HeartRateRecorderIntegrationTests.swift in Sources */,
 				1AE2DD321C4BBE9200FB395E /* TestHelpers.swift in Sources */,
 				1A2D10BC1C50FFFF0076F7E4 /* HeartRateViewControllerTests.swift in Sources */,
 				1AE2DD341C4BDBD000FB395E /* MockBluetoothControllerConnectionTests.swift in Sources */,

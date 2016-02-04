@@ -20,7 +20,9 @@ class SessionRecorder: NSObject {
         }
     }
     
-    override init() {
+    static let sharedInstance = SessionRecorder()
+    
+    private override init() {
         state = .Inactive
         super.init()
     }
