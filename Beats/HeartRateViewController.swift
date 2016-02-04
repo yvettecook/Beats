@@ -15,7 +15,6 @@ final class HeartRateViewController: UIViewController, HeartRateKitUIDelegate {
     var sessionRecorder = SessionRecorder.sharedInstance
     
     @IBOutlet weak var bpmLabel: UILabel!
-    @IBOutlet weak var recordingControlsView: UIView!
     
     override func viewDidLoad() {
         heartRateKit = HeartRateKit.sharedInstance
