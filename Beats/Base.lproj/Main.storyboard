@@ -135,7 +135,6 @@
                     </view>
                     <connections>
                         <outlet property="bpmLabel" destination="bil-nw-S7c" id="dPK-n5-gQM"/>
-                        <outlet property="recordingControlsView" destination="rou-DV-zZp" id="BKU-oG-q7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOp-w5-61G" userLabel="First Responder" sceneMemberID="firstResponder"/>
