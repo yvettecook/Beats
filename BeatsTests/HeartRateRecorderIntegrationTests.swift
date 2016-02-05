@@ -46,6 +46,13 @@ class HeartRateRecorderIntegrationTests: XCTestCase {
         
         waitForExpectationsWithTimeout(5.5, handler: nil)
     }
+    
+    func testSessionIsEndedWhenFinishButtonTapped() {
+        heartRateVC.recordingControlsVC?.startRecording()
+        heartRateVC.recordingControlsVC?.finishRecording()
+        XCTAssertEqual(sessionRecorder.state, SessionRecorderState.Finished)
+        XCTAssertNotNil(sessionRecorder.currentSession?.endTime)
+    }
 
 
 }

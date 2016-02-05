@@ -48,9 +48,9 @@ class HeartRateViewControllerTests: XCTestCase {
             expectation?.fulfill()
         }
         
-        asyncTest(completion, wait: 5)
+        asyncTest(completion, wait: 7)
         
-        waitForExpectationsWithTimeout(5.5, handler: nil)
+        waitForExpectationsWithTimeout(7.5, handler: nil)
     }
     
     func testHasARecordingControlsVC() {

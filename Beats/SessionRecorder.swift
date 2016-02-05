@@ -39,6 +39,7 @@ class SessionRecorder: NSObject {
     
     func finishRecording() {
         state = .Finished
+        currentSession?.end()
     }
     
     // MARK: Sessions
