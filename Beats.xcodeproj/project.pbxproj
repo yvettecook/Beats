@@ -16,6 +16,7 @@
 		1A2D10BC1C50FFFF0076F7E4 /* HeartRateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D10BB1C50FFFF0076F7E4 /* HeartRateViewControllerTests.swift */; };
 		1A6E7AF21C68ED4100FDDF36 /* SaveSessionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7AF11C68ED4100FDDF36 /* SaveSessionViewControllerTests.swift */; };
 		1A6E7AF71C69083F00FDDF36 /* SaveWorkoutDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7AF61C69083E00FDDF36 /* SaveWorkoutDetailsViewController.swift */; };
+		1A6E7AF91C69164B00FDDF36 /* HalfSizePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6E7AF81C69164B00FDDF36 /* HalfSizePresentationController.swift */; };
 		1A6EC44B1C512DFF00A042EA /* BluetoothController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6EC44A1C512DFF00A042EA /* BluetoothController.swift */; };
 		1A8F45851C443382002B45B7 /* MockPeripheralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */; };
 		1A94609B1C5141DD00A0F04B /* BluetoothControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94609A1C5141DD00A0F04B /* BluetoothControllerState.swift */; };
@@ -78,6 +79,7 @@
 		1A2D10BB1C50FFFF0076F7E4 /* HeartRateViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateViewControllerTests.swift; sourceTree = "<group>"; };
 		1A6E7AF11C68ED4100FDDF36 /* SaveSessionViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveSessionViewControllerTests.swift; sourceTree = "<group>"; };
 		1A6E7AF61C69083E00FDDF36 /* SaveWorkoutDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveWorkoutDetailsViewController.swift; sourceTree = "<group>"; };
+		1A6E7AF81C69164B00FDDF36 /* HalfSizePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfSizePresentationController.swift; sourceTree = "<group>"; };
 		1A6EC44A1C512DFF00A042EA /* BluetoothController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothController.swift; sourceTree = "<group>"; };
 		1A8F45841C443382002B45B7 /* MockPeripheralTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPeripheralTests.swift; sourceTree = "<group>"; };
 		1A94609A1C5141DD00A0F04B /* BluetoothControllerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothControllerState.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				1A2D10B91C5012050076F7E4 /* HeartRateViewController.swift */,
 				1A6E7AF61C69083E00FDDF36 /* SaveWorkoutDetailsViewController.swift */,
 				1AA5BD981C5A3B4200F0369B /* RecordingControlsViewController.swift */,
+				1A6E7AF81C69164B00FDDF36 /* HalfSizePresentationController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				1AA5BD9E1C5A4A3100F0369B /* SessionRecorder.swift in Sources */,
 				1AC766B61C612CAD00F5E1D4 /* Session.swift in Sources */,
 				1AE2DD401C4E57C500FB395E /* ArrayExtension.swift in Sources */,
+				1A6E7AF91C69164B00FDDF36 /* HalfSizePresentationController.swift in Sources */,
 				1A6EC44B1C512DFF00A042EA /* BluetoothController.swift in Sources */,
 				1A2D10B51C4F99070076F7E4 /* ScanningViewController.swift in Sources */,
 			);
