@@ -124,21 +124,12 @@
                                     <segue destination="PVG-pd-Wsp" kind="embed" identifier="EmbedControls" id="vqJ-aU-SzF"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G5T-6Y-wqO">
-                                <rect key="frame" x="44" y="37" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="save:" destination="QNe-bS-4yC" eventType="touchUpInside" id="vDJ-am-PfM"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2627450980392157" green="0.6705882352941176" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hPG-q2-XCl" firstAttribute="centerX" secondItem="xee-Eb-GbI" secondAttribute="centerX" id="0GD-aG-aqC"/>
-                            <constraint firstItem="G5T-6Y-wqO" firstAttribute="top" secondItem="8p8-vA-4jy" secondAttribute="bottom" constant="17" id="E7i-NY-5Ro"/>
                             <constraint firstItem="hPG-q2-XCl" firstAttribute="centerY" secondItem="xee-Eb-GbI" secondAttribute="centerY" id="SA3-mG-R6B"/>
                             <constraint firstItem="rou-DV-zZp" firstAttribute="centerX" secondItem="xee-Eb-GbI" secondAttribute="centerX" id="Yhb-ZQ-c7I"/>
-                            <constraint firstItem="G5T-6Y-wqO" firstAttribute="leading" secondItem="xee-Eb-GbI" secondAttribute="leadingMargin" constant="24" id="l3U-Hm-8QQ"/>
                             <constraint firstItem="DS9-8q-vIl" firstAttribute="top" secondItem="rou-DV-zZp" secondAttribute="bottom" constant="20" id="uXp-FM-pc7"/>
                         </constraints>
                     </view>
@@ -174,38 +165,38 @@
                                 <state key="normal" image="green_tick_button"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TOB-WX-YNB">
-                                <rect key="frame" x="20" y="109" width="560" height="183"/>
+                                <rect key="frame" x="20" y="109" width="560" height="173"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIR-qH-9oX">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="29"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TWI-ML-HwN">
-                                        <rect key="frame" x="0.0" y="31" width="560" height="30"/>
+                                        <rect key="frame" x="0.0" y="29" width="560" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVERAGE HEART RATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eud-Jq-ORt">
-                                        <rect key="frame" x="0.0" y="61" width="560" height="31"/>
+                                        <rect key="frame" x="0.0" y="58" width="560" height="29"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QIQ-ag-PAZ">
-                                        <rect key="frame" x="0.0" y="92" width="560" height="30"/>
+                                        <rect key="frame" x="0.0" y="87" width="560" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DURATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zt4-tG-mIC">
-                                        <rect key="frame" x="0.0" y="122" width="560" height="31"/>
+                                        <rect key="frame" x="0.0" y="115" width="560" height="29"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mtz-jl-YwY">
-                                        <rect key="frame" x="0.0" y="153" width="560" height="30"/>
+                                        <rect key="frame" x="0.0" y="144" width="560" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -218,7 +209,7 @@
                         <constraints>
                             <constraint firstItem="TOB-WX-YNB" firstAttribute="bottom" secondItem="ZcX-oI-knF" secondAttribute="bottom" id="8RN-Wt-yP4"/>
                             <constraint firstAttribute="leadingMargin" secondItem="TOB-WX-YNB" secondAttribute="leading" id="9r2-DD-Wx4"/>
-                            <constraint firstItem="2Y0-pc-UwW" firstAttribute="top" secondItem="TOB-WX-YNB" secondAttribute="bottom" constant="20" id="Buy-7M-2bJ"/>
+                            <constraint firstItem="2Y0-pc-UwW" firstAttribute="top" secondItem="TOB-WX-YNB" secondAttribute="bottom" constant="30" id="Buy-7M-2bJ"/>
                             <constraint firstItem="TOB-WX-YNB" firstAttribute="top" secondItem="NmG-cu-ghG" secondAttribute="top" constant="30" id="FrA-GV-Uni"/>
                             <constraint firstItem="TOB-WX-YNB" firstAttribute="bottom" secondItem="NmG-cu-ghG" secondAttribute="bottom" constant="-20" id="GVI-re-6xi"/>
                             <constraint firstItem="TOB-WX-YNB" firstAttribute="top" secondItem="ZcX-oI-knF" secondAttribute="bottom" constant="29" id="JtO-La-BN8"/>

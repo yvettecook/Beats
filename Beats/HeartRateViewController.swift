@@ -37,14 +37,20 @@ final class HeartRateViewController: UIViewController, UIViewControllerTransitio
                 let vc = segue.destinationViewController as? RecordingControlsViewController
                 else { fatalError("Incorrect EmbedControls segue") }
             recordingControlsVC = vc
+            recordingControlsVC?.heartRateVC = self
         }
     }
     
-    @IBAction func save(sender: AnyObject) {
-        showSaveSessionPopover()
+    func showSaveWorkoutUI() {
+        guard let workout = sessionRecorder.currentSession else { return }
+        showSaveSessionPopover(workout)
     }
+
+}
+
+extension HeartRateViewController {
     
-    func showSaveSessionPopover() {
+    func showSaveSessionPopover(session: Session) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let saveWorkoutVC = storyboard.instantiateViewControllerWithIdentifier("SaveWorkoutViewController")
         
@@ -58,6 +64,4 @@ final class HeartRateViewController: UIViewController, UIViewControllerTransitio
         return HalfSizePresentationController(presentedViewController: presented, presentingViewController: presentingViewController!)
     }
     
-
 }
-

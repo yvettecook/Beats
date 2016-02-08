@@ -11,6 +11,7 @@ import UIKit
 final class RecordingControlsViewController: UIViewController, SessionRecorderDelegate {
     
     var sessionRecorder = SessionRecorder.sharedInstance
+    var heartRateVC : HeartRateViewController?
     
     @IBOutlet weak var stackView: UIStackView!
     
@@ -34,6 +35,7 @@ final class RecordingControlsViewController: UIViewController, SessionRecorderDe
     
     func finishRecording() {
         sessionRecorder.finishRecording()
+        self.heartRateVC?.showSaveWorkoutUI()
     }
     
     @IBAction func buttonTapped(sender: UIButton) {
