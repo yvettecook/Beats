@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HeartRateViewController: UIViewController, HeartRateKitUIDelegate {
+final class HeartRateViewController: UIViewController, UIViewControllerTransitioningDelegate, HeartRateKitUIDelegate {
     
     var heartRateKit: HeartRateKit?
     var recordingControlsVC: RecordingControlsViewController?
@@ -39,6 +39,25 @@ final class HeartRateViewController: UIViewController, HeartRateKitUIDelegate {
             recordingControlsVC = vc
         }
     }
+    
+    @IBAction func save(sender: AnyObject) {
+        showSaveSessionPopover()
+    }
+    
+    func showSaveSessionPopover() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let saveWorkoutVC = storyboard.instantiateViewControllerWithIdentifier("SaveWorkoutViewController")
+        
+        saveWorkoutVC.modalPresentationStyle = .Custom
+        saveWorkoutVC.transitioningDelegate = self
+        
+        self.presentViewController(saveWorkoutVC, animated: true, completion: nil)
+    }
+    
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+        return HalfSizePresentationController(presentedViewController: presented, presentingViewController: presentingViewController!)
+    }
+    
 
 }
 

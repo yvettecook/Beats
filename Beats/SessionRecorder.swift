@@ -35,10 +35,11 @@ class SessionRecorder{
     func pauseRecording() {
         state = .Paused
     }
-    
+
     func finishRecording() {
         state = .Finished
         currentSession?.end()
+        print("Session finished: \(currentSession!.values)")
     }
     
     // MARK: Sessions
