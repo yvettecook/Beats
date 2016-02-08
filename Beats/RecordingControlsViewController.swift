@@ -10,32 +10,29 @@ import UIKit
 
 final class RecordingControlsViewController: UIViewController, SessionRecorderDelegate {
     
-    var sessionRecorder: SessionRecorder?
+    var sessionRecorder = SessionRecorder.sharedInstance
     
     @IBOutlet weak var stackView: UIStackView!
     
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var finishButton: UIButton!
-    
+
     override func viewDidLoad() {
-        sessionRecorder = SessionRecorder.sharedInstance
-        sessionRecorder?.delegate = self
-        sessionRecorder?.state = .Inactive
+        super.viewDidLoad()
+        sessionRecorder.delegate = self
+        sessionRecorder.state = .Inactive
     }
     
     func startRecording() {
-        guard let sessionRecorder = sessionRecorder else { return }
         sessionRecorder.startRecording()
     }
     
     func pauseRecording() {
-        guard let sessionRecorder = sessionRecorder else { return }
         sessionRecorder.pauseRecording()
     }
     
     func finishRecording() {
-        guard let sessionRecorder = sessionRecorder else { return }
         sessionRecorder.finishRecording()
     }
     

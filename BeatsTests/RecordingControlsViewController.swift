@@ -6,6 +6,8 @@
 //  Copyright © 2016 Yvette. All rights reserved.
 //
 
+// Trying out testing singletons: https://sharpfivesoftware.com/2015/02/03/testing-singletons-in-swift/
+
 import XCTest
 
 @testable import Beats
@@ -13,8 +15,7 @@ import XCTest
 class RecordingControlsViewControllerTests : XCTestCase {
     
     var recordingControlsVC: RecordingControlsViewController!
-    var recorder: SessionRecorder!
-
+    var recorder: StubSessionRecorder!
     
     override func setUp() {
         super.setUp()
@@ -25,7 +26,9 @@ class RecordingControlsViewControllerTests : XCTestCase {
         
         XCTAssertNotNil(recordingControlsVC.view)
         
-        recorder = recordingControlsVC.sessionRecorder
+        recorder = StubSessionRecorder()
+        recorder.delegate = recordingControlsVC
+        recordingControlsVC.sessionRecorder = recorder
     }
     
     override func tearDown() {
@@ -83,5 +86,24 @@ class RecordingControlsViewControllerTests : XCTestCase {
         XCTAssertFalse(recordingControlsVC.finishButton.hidden)
     }
     
+    class StubSessionRecorder: SessionRecorder {
+        
+        override func startRecording() {
+            state = .Recording
+        }
+        
+        override func pauseRecording() {
+            state = .Paused
+        }
+        
+        override func finishRecording() {
+            state = .Finished
+        }
+        
+    }
+    
 }
+
+
+
 

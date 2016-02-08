@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SessionRecorder: NSObject {
+class SessionRecorder{
     
     var delegate: SessionRecorderDelegate?
     
@@ -22,9 +22,8 @@ class SessionRecorder: NSObject {
     
     static let sharedInstance = SessionRecorder()
     
-    private override init() {
+    internal init() {
         state = .Inactive
-        super.init()
     }
     
     // MARK: Recording
