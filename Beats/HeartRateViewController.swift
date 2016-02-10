@@ -61,7 +61,7 @@ extension HeartRateViewController {
     }
     
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-        return HalfSizePresentationController(presentedViewController: presented, presentingViewController: presentingViewController!)
+        return HalfSizePresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
     
 }
