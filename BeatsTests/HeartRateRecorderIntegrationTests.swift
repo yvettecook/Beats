@@ -53,6 +53,17 @@ class HeartRateRecorderIntegrationTests: XCTestCase {
         XCTAssertEqual(sessionRecorder.state, SessionRecorderState.Finished)
         XCTAssertNotNil(sessionRecorder.currentSession?.endTime)
     }
-
+    
+    func testWhenSessionEndedSaveModalIsShown() {
+        heartRateVC.recordingControlsVC?.startRecording()
+        heartRateVC.recordingControlsVC?.finishRecording()
+        guard let presentedVC = heartRateVC.presentedViewController as? SaveWorkoutDetailsViewController
+            else {
+                XCTFail()
+                return
+            }
+        print(presentedVC)
+        XCTAssertNotNil(presentedVC)
+    }
 
 }

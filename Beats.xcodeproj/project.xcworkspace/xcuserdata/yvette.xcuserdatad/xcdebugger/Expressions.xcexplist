@@ -11,10 +11,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "HeartRateViewController.presentationControllerForPresentedViewController(UIViewController, presentingViewController : UIViewController, sourceViewController : UIViewController) -&gt; UIPresentationController?:HeartRateViewController.swift">
+         contextName = "HeartRateRecorderIntegrationTests.testWhenSessionEndedSaveModalIsShown() -&gt; ():HeartRateRecorderIntegrationTests.swift">
          <PersistentStrings>
             <PersistentString
-               value = "presentingViewController">
+               value = "presentedVC!.identifier">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

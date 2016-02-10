@@ -23,7 +23,7 @@ final class HeartRateViewController: UIViewController, UIViewControllerTransitio
     }
  
     func hrKitDidUpdateState(state: HeartRateKitState) {
-        
+        // TODO : Cope if connection to montitor is lost
     }
     
     func hrKitDidUpdateBPM(bpm: Int) {
