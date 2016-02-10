@@ -46,7 +46,11 @@ final class HeartRateKit : NSObject, BluetoothControllerDelegate {
     }
     
     func scanForMonitors() {
-        bluetoothController!.scanForAvailableMonitors()
+        guard let bluetoothController = bluetoothController else {
+            print("Error: No Bluetooth Controller")
+            return
+        }
+        bluetoothController.scanForAvailableMonitors()
     }
     
     
